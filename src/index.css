@@ -20,12 +20,9 @@
   4. Improve text rendering
 */
 html {
-  /* font-family: "Caveat Brush", "Montserrat", sans-serif; */
-  font-family: "Caveat Brush", cursive;
-  /* font-family: "Rakkas", serif; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: cursive;
   font-size: 10px;
-  /* scrollbar-color: linear-gradient(180deg, #d0368a 0%, #708ad4 99%) #e0e0e0; */
-  /* scrollbar-width: thin; */
 }
 
 html::-webkit-scrollbar-track {
