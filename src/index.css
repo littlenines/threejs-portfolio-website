@@ -69,6 +69,7 @@ button,
 textarea,
 select {
   font: inherit;
+  -webkit-tap-highlight-color: transparent; /* This removes the highlight on tap */
 }
 
 /*
