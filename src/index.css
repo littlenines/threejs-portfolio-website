@@ -1,0 +1,144 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+html {
+  /* font-family: "Caveat Brush", "Montserrat", sans-serif; */
+  font-family: "Caveat Brush", cursive;
+  /* font-family: "Rakkas", serif; */
+  font-size: 10px;
+  /* scrollbar-color: linear-gradient(180deg, #d0368a 0%, #708ad4 99%) #e0e0e0; */
+  /* scrollbar-width: thin; */
+}
+
+html::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(0.75, #4ac0ff),
+      color-stop(0.52, rgb(133, 150, 253)),
+      color-stop(0.22, #b275fb));
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* .canvas {
+  position: fixed !important;
+  right: 99px !important;
+  width: 700px !important;
+  height: 700px !important;
+} */
+.canvas {
+  cursor: grab;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1600px;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+text {
+  fill: white;
+  font-family: "Lato", sans-serif;
+  font-size: 3.2rem;
+  pointer-events: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-variant-ligatures: none;
+  letter-spacing: 6px;
+  animation: rotate 25s linear infinite;
+  transform-origin: 250px 250px;
+}
+
+@media(min-width: 1200px) {
+  .container {
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

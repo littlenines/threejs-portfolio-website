@@ -1,0 +1,74 @@
+@use "../../../styles/variables" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: #1a1a1a;
+  justify-content: space-between;
+  z-index: 2;
+  //   padding: 10px;
+//   border-bottom: 1px solid gray;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+li {
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 500ms ease-in-out;
+    z-index: 1;
+    clip-path: circle(30px);
+    visibility: hidden;
+  }
+}
+
+.header.active {
+  .nav:before {
+    visibility: visible;
+    clip-path: circle(100%);
+  }
+}
+
+.logo {
+  font-size: 6.4rem;
+  font-weight: bolder;
+}
+
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.text_circle {
+  width: 70px;
+}
+
+@media(min-width: 768px) {
+  .menu {
+    top: 20px;
+    right: 20px;
+  }
+
+  .text_circle {
+    width: 100px;
+  }
+  
+}

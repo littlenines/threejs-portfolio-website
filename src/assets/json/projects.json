@@ -1,0 +1,26 @@
+[
+    {
+        "image": "/rebecca.jpg",
+        "imageAlt": "portfolio",
+        "title": "Portfolio",
+        "subtitle": "React, Three.js"
+    },
+    {
+        "image": "/torii.jpg",
+        "imageAlt": "Japan",
+        "title": "Sketchfab Model View",
+        "subtitle": "React, Three.js"
+    },
+    {
+        "image": "/test.png",
+        "imageAlt": "test",
+        "title": "Project",
+        "subtitle": "React, Three.js"
+    },
+    {
+        "image": "/torii.jpg",
+        "imageAlt": "Japan",
+        "title": "Project",
+        "subtitle": "React, Three.js"
+    }
+]

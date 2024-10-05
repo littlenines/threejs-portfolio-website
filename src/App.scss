@@ -1,0 +1,101 @@
+@use "./styles/variables" as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin-bottom: $margin-xl;
+}
+
+.hero_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.model {
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  // justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.liquidModelDesktop {
+  display: none;
+}
+
+// Projects
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projects_title {
+  font-size: $font-lg;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+// icons
+.icon_size {
+  font-size: 3em;
+}
+
+// MEdia query
+@media (min-width: $media-tablet) {
+
+  .projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .projects_item {
+    width: calc(50% - 60px);
+    margin-bottom: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+
+    &:nth-child(2n-2) {
+      position: relative;
+      top: 300px;
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .hero {
+    flex-direction: unset;
+  }
+
+  .hero_info {
+    align-items: unset;
+  }
+
+  .liquidModelDesktop {
+    display: block;
+  }
+
+  .buttons {
+    gap: 16px;
+    width: fit-content;
+    justify-content: unset;
+    flex-direction: unset;
+  }
+
+  .icon_size {
+    font-size: 4em;
+  }
+}

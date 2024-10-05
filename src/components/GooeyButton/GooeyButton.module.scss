@@ -1,0 +1,100 @@
+@use '../../styles/variables' as *;
+
+.gooey {
+  position: relative;
+  border-radius: 30px;
+  filter: url("#gooey");
+}
+
+.gooey_border {
+  max-width: 300px;
+  position: relative;
+  padding: 3px;
+  border-radius: 30px;
+  background: $primary-gradient;
+}
+
+.gooey_button,
+.gooey_button_outlined {
+  position: relative;
+  z-index: 5;
+  max-width: 300px;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: $color-light;
+  // font-size: $font-lg;
+  font-size: $font-md;
+  background: $primary-gradient;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.gooey_button_outlined {
+  padding: 7px 15px;
+  color: $color-light;
+  background: $color-dark;
+}
+
+.svg {
+  top: -4000px;
+  left: -4000px;
+  position: absolute;
+}
+
+.gooey:hover {
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    .bubble {
+      background: $primary-gradient;
+      border-radius: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+
+      @for $bubble from 1 through 10 {
+        &:nth-child(#{$bubble}) {
+          $size: 25px;
+          left: (random(90) + 10) + px;
+          width: $size;
+          height: $size;
+          animation: move-#{$bubble} #{2 + $bubble * 0.02}s infinite;
+          animation-delay: #{$bubble * 0.2}s;
+        }
+      }
+    }
+  }
+}
+
+@for $bubble from 1 through 10 {
+  @keyframes move-#{$bubble} {
+    0% {
+      transform: translate(0, 0);
+    }
+    99% {
+      transform: translate(0, -(random(80) + 50) + px);
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+
+  .gooey_button,
+  .gooey_button_outlined {
+    font-size: $font-lg;
+  }
+}
