@@ -9,7 +9,7 @@ function Header() {
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: window.innerWidth > 425 ? window.innerWidth - 105 : window.innerWidth - 70, y: 0 });
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  
+
   // Utility to handle both mouse and touch events
   const getClientX = (e) => (e.touches ? e.touches[0].clientX : e.clientX);
   const getClientY = (e) => (e.touches ? e.touches[0].clientY : e.clientY);
@@ -68,6 +68,7 @@ function Header() {
     );
 
     if (distanceMoved > 5) {
+      if (e.touches) e.preventDefault();
       setIsDragging(true); // Mark as dragging only if movement is significant
       let newX = getClientX(e) - menuRef.current.startX;
       let newY = getClientY(e) - menuRef.current.startY;

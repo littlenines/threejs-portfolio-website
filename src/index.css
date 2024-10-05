@@ -20,8 +20,7 @@
   4. Improve text rendering
 */
 html {
-  /* font-family: "Montserrat", sans-serif; */
-  font-family: cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 10px;
 }
 
