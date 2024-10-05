@@ -13,7 +13,6 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import "./App.scss";
 
 function App() {
-  console.log(projects)
   return (
     <Suspense fallback={<Loader />}>
       <Header />
