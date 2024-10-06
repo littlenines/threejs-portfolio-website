@@ -106,8 +106,13 @@ ul {
 } */
 .canvas {
   cursor: grab;
-  /* border: 1px solid red; */
   border-radius: 50%;
+}
+
+.canvas_cube {
+  position: absolute !important;
+  z-index: -1;
+  display: none;
 }
 
 .container {
@@ -137,5 +142,9 @@ text {
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .canvas_cube {
+    display: block;
   }
 }

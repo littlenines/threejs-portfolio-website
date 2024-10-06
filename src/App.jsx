@@ -9,6 +9,7 @@ import LabItem from "./components/LabItem";
 import projects from "./assets/json/projects.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import CubePortal from "./components/CubePortal";
 
 import "./App.scss";
 
@@ -22,33 +23,36 @@ function App() {
             <HeroInfo />
 
             <div className="buttons">
-              <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon_size" />}/>
-              <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon_size" />}/>
+              <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon_size" />} />
+              <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon_size" />} />
               <GooeyButton isGradientBorder title="Download CV" />
             </div>
           </div>
           <LiquidCircle liquidClass="liquidModelDesktop" />
         </div>
       </section>
-      
       {/* Personal Projects */}
-      <section className="container">
-        <h2 className="projects_title">Personal Projects</h2>
-        <div className="projects">
-          {projects.map(({ image, imageAlt, title, subtitle }, index) => {
-            return (
-              <LabItem
-                key={index}
-                image={image}
-                imageAlt={imageAlt}
-                title={title}
-                subtitle={subtitle}
-                className='projects_item'
-              />
-            );
-          })}
-        </div>
-      </section>
+      {/* TODO: better structure */}
+      <div style={{ position: 'relative' }}>
+        <CubePortal />
+        <section className="container">
+          <h2 className="projects_title">Personal Projects</h2>
+          <div className="projects">
+            {projects.map(({ image, imageAlt, title, subtitle }, index) => {
+              return (
+                <LabItem
+                  key={index}
+                  image={image}
+                  imageAlt={imageAlt}
+                  title={title}
+                  subtitle={subtitle}
+                  className='projects_item'
+                />
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </Suspense>
   );
 }
