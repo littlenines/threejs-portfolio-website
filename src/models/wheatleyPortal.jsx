@@ -1,20 +1,8 @@
-import React, { useRef, useEffect } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
-import Portal from '../assets/3D/portal.glb'
+import React, {memo} from 'react'
 
-const PortalModel = ({...props}) => {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF(Portal)
-  const { actions } = useAnimations(animations, group)
-
-  useEffect(() => {
-    const action = actions['core_personality_sphere_base_skeleton|core02_pincher_idle'] 
-    if (action) {
-      action.play();
-    }
-  }, [actions]);
+const WheatleyPortal = ({nodes, materials, modelRef, ...props}) => {
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={modelRef} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.03221844}>
           <group
@@ -70,4 +58,4 @@ const PortalModel = ({...props}) => {
   )
 }
 
-export default PortalModel
+export default memo(WheatleyPortal)

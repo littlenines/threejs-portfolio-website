@@ -98,19 +98,12 @@ ul {
   list-style: none;
 }
 
-/* .canvas {
-  position: fixed !important;
-  right: 99px !important;
-  width: 700px !important;
-  height: 700px !important;
-} */
-.canvas {
+.head_canvas {
   cursor: grab;
   border-radius: 50%;
 }
 
 .canvas_cube {
-  position: absolute !important;
   z-index: -1;
   display: none;
 }
