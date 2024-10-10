@@ -16,11 +16,5 @@
         "imageAlt": "test",
         "title": "Project",
         "subtitle": "React, Three.js"
-    },
-    {
-        "image": "/torii.jpg",
-        "imageAlt": "Japan",
-        "title": "Project",
-        "subtitle": "React, Three.js"
     }
 ]

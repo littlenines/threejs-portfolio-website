@@ -10,6 +10,7 @@ import projects from "./assets/json/projects.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import CubePortal from "./components/CubePortal";
+import skills from './assets/json/skills.json'
 
 import "./App.scss";
 
@@ -28,16 +29,15 @@ function App() {
               <GooeyButton isGradientBorder title="Download CV" />
             </div>
           </div>
-          <LiquidCircle liquidClass="liquidModelDesktop" />
+          <LiquidCircle liquidClass="liquid_model_desktop" />
         </div>
       </section>
       {/* Personal Projects */}
-      {/* TODO: better structure */}
-      <div style={{ position: 'relative' }}>
+      <section className="projects">
         <CubePortal />
-        <section className="container">
+        <div className="container">
           <h2 className="projects_title">Personal Projects</h2>
-          <div className="projects">
+          <div className="projects_card">
             {projects.map(({ image, imageAlt, title, subtitle }, index) => {
               return (
                 <LabItem
@@ -46,13 +46,31 @@ function App() {
                   imageAlt={imageAlt}
                   title={title}
                   subtitle={subtitle}
-                  className='projects_item'
+                  className='projects_card_item'
                 />
               );
             })}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      {/* SKILLS */}
+      <section className="container_md">
+        <div className="skills">
+            <h2 className="skills_title">Familiar With</h2>
+
+            <div className="skills_wrap">
+              {skills?.map(({id, image, text}) => {
+                return (
+                  <div key={id} className="skills_card">
+                <img src={image} alt="html" />
+                <p>{text}</p>
+              </div>
+              )
+              })}
+            </div>
+        </div>
+
+      </section>
     </Suspense>
   );
 }

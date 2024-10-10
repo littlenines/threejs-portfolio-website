@@ -1,0 +1,102 @@
+[
+    {
+        "id": 0,
+        "image": "/skills/html.svg",
+        "text": "HTML"
+    },
+    {
+        "id": 1,
+        "image": "/skills/css.svg",
+        "text": "CSS"
+    },
+    {
+        "id": 2,
+        "image": "/skills/js.svg",
+        "text": "Javascript"
+    },
+    {
+        "id": 3,
+        "image": "/skills/typescript.svg",
+        "text": "Typescript"
+    },
+    {
+        "id": 4,
+        "image": "/skills/react.svg",
+        "text": "React"
+    },
+    {
+        "id": 5,
+        "image": "/skills/nextjs.svg",
+        "text": "Next.js"
+    },
+    {
+        "id": 6,
+        "image": "/skills/mui.svg",
+        "text": "Mui"
+    },
+    {
+        "id": 7,
+        "image": "/skills/vuejs.svg",
+        "text": "Vue"
+    },
+    {
+        "id": 8,
+        "image": "/skills/nuxt.svg",
+        "text": "Nuxt"
+    },
+    {
+        "id": 9,
+        "image": "/skills/vuetify.svg",
+        "text": "Vuetify"
+    },
+    {
+        "id": 10,
+        "image": "/skills/threejs.svg",
+        "text": "Three.js"
+    },
+    {
+        "id": 11,
+        "image": "/skills/webpack.svg",
+        "text": "Webpack"
+    },
+    {
+        "id": 12,
+        "image": "/skills/gulp.svg",
+        "text": "Gulp"
+    },
+    {
+        "id": 13,
+        "image": "/skills/axios.svg",
+        "text": "Axios"
+    },
+    {
+        "id": 14,
+        "image": "/skills/git.svg",
+        "text": "Git"
+    },
+    {
+        "id": 15,
+        "image": "/skills/github.svg",
+        "text": "GitHub"
+    },
+    {
+        "id": 16,
+        "image": "/skills/gitlab.svg",
+        "text": "GitLab"
+    },
+    {
+        "id": 17,
+        "image": "/skills/postman.svg",
+        "text": "Postman"
+    },
+    {
+        "id": 18,
+        "image": "/skills/jira.svg",
+        "text": "Jira"
+    },
+    {
+        "id": 19,
+        "image": "/skills/trello.svg",
+        "text": "Trello"
+    }
+]
