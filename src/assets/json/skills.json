@@ -2,101 +2,121 @@
     {
         "id": 0,
         "image": "/skills/html.svg",
-        "text": "HTML"
+        "text": "HTML",
+        "alt": "HTML"
     },
     {
         "id": 1,
         "image": "/skills/css.svg",
-        "text": "CSS"
+        "text": "CSS",
+        "alt": "CSS"
     },
     {
         "id": 2,
         "image": "/skills/js.svg",
-        "text": "Javascript"
+        "text": "Javascript",
+        "alt": "javascript"
     },
     {
         "id": 3,
         "image": "/skills/typescript.svg",
-        "text": "Typescript"
+        "text": "Typescript",
+        "alt": "typescript"
     },
     {
         "id": 4,
         "image": "/skills/react.svg",
-        "text": "React"
+        "text": "React",
+        "alt": "react"
     },
     {
         "id": 5,
         "image": "/skills/nextjs.svg",
-        "text": "Next.js"
+        "text": "Next.js",
+        "alt": "nextjs"
     },
     {
         "id": 6,
         "image": "/skills/mui.svg",
-        "text": "Mui"
+        "text": "Mui",
+        "alt": "mui"
     },
     {
         "id": 7,
         "image": "/skills/vuejs.svg",
-        "text": "Vue"
+        "text": "Vue",
+        "alt": "vue"
     },
     {
         "id": 8,
         "image": "/skills/nuxt.svg",
-        "text": "Nuxt"
+        "text": "Nuxt",
+        "alt": "nuxt"
     },
     {
         "id": 9,
         "image": "/skills/vuetify.svg",
-        "text": "Vuetify"
+        "text": "Vuetify",
+        "alt": "vuetify"
     },
     {
         "id": 10,
         "image": "/skills/threejs.svg",
-        "text": "Three.js"
+        "text": "Three.js",
+        "alt": "threejs"
     },
     {
         "id": 11,
         "image": "/skills/webpack.svg",
-        "text": "Webpack"
+        "text": "Webpack",
+        "alt": "webpack"
     },
     {
         "id": 12,
         "image": "/skills/gulp.svg",
-        "text": "Gulp"
+        "text": "Gulp",
+        "alt": "gulp"
     },
     {
         "id": 13,
         "image": "/skills/axios.svg",
-        "text": "Axios"
+        "text": "Axios",
+        "alt": "axios"
     },
     {
         "id": 14,
         "image": "/skills/git.svg",
-        "text": "Git"
+        "text": "Git",
+        "alt": "git"
     },
     {
         "id": 15,
         "image": "/skills/github.svg",
-        "text": "GitHub"
+        "text": "GitHub",
+        "alt": "github"
     },
     {
         "id": 16,
         "image": "/skills/gitlab.svg",
-        "text": "GitLab"
+        "text": "GitLab",
+        "alt": "gitlab"
     },
     {
         "id": 17,
         "image": "/skills/postman.svg",
-        "text": "Postman"
+        "text": "Postman",
+        "alt": "postman"
     },
     {
         "id": 18,
         "image": "/skills/jira.svg",
-        "text": "Jira"
+        "text": "Jira",
+        "alt": "jira"
     },
     {
         "id": 19,
         "image": "/skills/trello.svg",
-        "text": "Trello"
+        "text": "Trello",
+        "alt": "trello"
     }
 ]

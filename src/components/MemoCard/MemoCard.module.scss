@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+
+.memo_card {
+  background-color: $color-dim;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 8px;
+
+  &:hover {
+    background: $primary-gradient;
+    color: $color-dark;
+    cursor: pointer;
+  }
+
+  &_logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &_title {
+    font-weight: 600;
+    font-size: $font-xxs;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .memo_card {
+    width: 120px;
+    height: 120px;
+
+    &_logo {
+      width: 60px;
+      height: 60px;
+    }
+
+    &_title {
+      font-size: $font-xms;
+    }
+  }
+}

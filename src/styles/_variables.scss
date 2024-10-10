@@ -1,4 +1,13 @@
+/*
+1. Margin
+2. Padding
+3. Color
+4. Font
+5. Media query
+6. Gradient colors
+*/
 
+// Margin
 $margin-xxs: 4px;
 $margin-xs: 8px;
 $margin-sm: 16px;
@@ -7,6 +16,7 @@ $margin-lg: 32px;
 $margin-xl: 40px;
 $margin-xxl: 80px;
 
+// Padding
 $padding-xxs: 4px;
 $padding-xs: 8px;
 $padding-sm: 16px;
@@ -15,10 +25,15 @@ $padding-lg: 32px;
 $padding-xl: 40px;
 $padding-xxl: 80px;
 
+// Color
 $color-dark: #1a1a1a;
+$color-dim: #242629;
 $color-light: #ffffff;
 $text-color: #cccccc;
 
+// Font
+$font-xxs: 1.2rem;
+$font-xms: 1.4rem;
 $font-xs: 1.6rem;
 $font-sm: 1.8rem;
 $font-md: 2.4rem;
@@ -28,8 +43,10 @@ $font-xxl: 6rem;
 $font-xxxl: 11rem;
 $font-title: 13rem;
 
+// Media query
 $media-tablet: 768px;
 $media-desktop: 1200px;
 
+// Gradient colors
 $primary-gradient: linear-gradient(270deg, #4ac0ff 0%, #b275fb 100%);
 $gradient-text: linear-gradient(270deg, #4ac0ff 46%, #b275fb 100%);

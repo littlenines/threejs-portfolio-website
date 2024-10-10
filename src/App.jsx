@@ -10,6 +10,7 @@ import projects from "./assets/json/projects.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import CubePortal from "./components/CubePortal";
+import MemoCard from "./components/MemoCard";
 import skills from './assets/json/skills.json'
 
 import "./App.scss";
@@ -32,6 +33,7 @@ function App() {
           <LiquidCircle liquidClass="liquid_model_desktop" />
         </div>
       </section>
+
       {/* Personal Projects */}
       <section className="projects">
         <CubePortal />
@@ -53,21 +55,14 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* SKILLS */}
       <section className="container_md">
         <div className="skills">
-            <h2 className="skills_title">Familiar With</h2>
-
-            <div className="skills_wrap">
-              {skills?.map(({id, image, text}) => {
-                return (
-                  <div key={id} className="skills_card">
-                <img src={image} alt="html" />
-                <p>{text}</p>
-              </div>
-              )
-              })}
-            </div>
+          <h2 className="skills_title">Technologies I&apos;ve Been Working With</h2>
+          <div className="skills_wrap">
+            {skills?.map(({ id, image, alt, text }) => <MemoCard key={id} image={image} alt={alt} text={text} />)}
+          </div>
         </div>
 
       </section>
