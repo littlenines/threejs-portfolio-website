@@ -64,7 +64,14 @@ function App() {
             {skills?.map(({ id, image, alt, text }) => <MemoCard key={id} image={image} alt={alt} text={text} />)}
           </div>
         </div>
+      </section>
 
+      <section className="container">
+        <h1 className="contact_title">Want to work with me?</h1>
+        <div className="contact_info">
+          <h3 className="contact_subtitle">Send me a message</h3>
+          <p className="contact_email"><a href="mailto:galbinovic584@gmail.com">galbinovic584@gmail.com</a></p>
+        </div>
       </section>
     </Suspense>
   );

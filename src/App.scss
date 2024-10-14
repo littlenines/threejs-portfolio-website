@@ -62,7 +62,44 @@
   justify-content: center;
 }
 
-// MEdia query
+// Contact
+.contact_title {
+  font-size: $font-lg;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact_subtitle {
+  font-size: $font-2sm;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.contact_email {
+  font-size: $font-md;
+  font-weight: 600;
+  padding-bottom: 16px;
+  margin-bottom: 14px;
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: $primary-gradient;
+    transition: width 0.5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Media query
 @media (min-width: $media-tablet) {
   .projects_card {
     flex-direction: row;
@@ -88,6 +125,14 @@
   .skills_wrap {
     gap: 24px;
   }
+
+  .contact_subtitle {
+    font-size: $font-md;
+  }
+
+  .contact_email {
+    font-size: $font-lg;
+  }
 }
 
 @media (min-width: $media-desktop) {
@@ -112,5 +157,17 @@
 
   .icon_size {
     font-size: 4em;
+  }
+
+  .contact_info {
+    padding: 40px 0;
+  }
+
+  .contact_subtitle {
+    font-size: $font-lg;
+  }
+
+  .contact_email {
+    font-size: $font-2lg;
   }
 }
