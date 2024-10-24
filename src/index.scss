@@ -91,6 +91,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+  position: relative;
 }
 
 ol,
@@ -108,9 +109,15 @@ a {
   border-radius: 50%;
 }
 
-.canvas_cube {
+.canvas_cube,
+.canvas_turret {
   z-index: -1;
+  top: 0;
   display: none;
+}
+
+.canvas_turret {
+  top: 0;
 }
 
 .container, .container_md {
@@ -146,7 +153,8 @@ text {
     padding-right: 30px;
   }
 
-  .canvas_cube {
+  .canvas_cube,
+  .canvas_turret {
     display: block;
   }
 }

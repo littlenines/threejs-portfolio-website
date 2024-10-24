@@ -5,7 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist', 'src/models/*', 'src/components/PortalHead', 'src/components/CubePortal'] },
+  { ignores: ['dist', 'src/models/*', 'src/components/PortalHead', 'src/components/CubePortal', 'src/components/CompanionPortal'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {

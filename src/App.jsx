@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import CubePortal from "./components/CubePortal";
 import MemoCard from "./components/MemoCard";
+import CompanionPortal from "./components/CompanionPortal";
 import skills from './assets/json/skills.json'
 
 import "./App.scss";
@@ -35,8 +36,8 @@ function App() {
       </section>
 
       {/* Personal Projects */}
-      <section className="projects">
         <CubePortal />
+      <section className="projects">
         <div className="container">
           <h2 className="projects_title">Personal Projects</h2>
           <div className="projects_card">
@@ -69,8 +70,13 @@ function App() {
       <section className="container">
         <h1 className="contact_title">Want to work with me?</h1>
         <div className="contact_info">
-          <h3 className="contact_subtitle">Send me a message</h3>
-          <p className="contact_email"><a href="mailto:galbinovic584@gmail.com">galbinovic584@gmail.com</a></p>
+          <div>
+            <h3 className="contact_subtitle">Send me a message</h3>
+            <p className="contact_email"><a href="mailto:galbinovic584@gmail.com">galbinovic584@gmail.com</a></p>
+          </div>
+        <div className="contact_cube">
+          <CompanionPortal/>
+        </div>
         </div>
       </section>
     </Suspense>

@@ -63,6 +63,10 @@
 }
 
 // Contact
+.contact_info {
+  text-align: center;
+}
+
 .contact_title {
   font-size: $font-lg;
   text-align: center;
@@ -80,7 +84,6 @@
   font-weight: 600;
   padding-bottom: 16px;
   margin-bottom: 14px;
-  width: fit-content;
   position: relative;
 
   &::after {
@@ -97,6 +100,10 @@
   &:hover::after {
     width: 100%;
   }
+}
+
+.contact_cube {
+  display: none;
 }
 
 // Media query
@@ -126,12 +133,25 @@
     gap: 24px;
   }
 
+  .contact_info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: unset;
+    gap: 20px;
+  }
+
   .contact_subtitle {
     font-size: $font-md;
   }
 
   .contact_email {
+    width: fit-content;
     font-size: $font-lg;
+  }
+
+  .contact_cube {
+    display: block;
   }
 }
 
