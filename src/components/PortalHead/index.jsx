@@ -26,10 +26,10 @@ const Model = memo(() => {
 
   return (
     <Suspense fallback={<Loader />}>
-    <WheatleyPortalModel nodes={nodes} materials={materials} modelRef={group} {...headProps} />;
+      <WheatleyPortalModel nodes={nodes} materials={materials} modelRef={group} {...headProps} />;
     </Suspense>
 
-  ) 
+  )
 });
 
 const PortalHead = () => {
@@ -38,21 +38,21 @@ const PortalHead = () => {
       <ambientLight intensity={0.2} />
       <directionalLight position={[5, 10, 5]} intensity={0.8} castShadow />
       <pointLight position={[-0.25, 0, 4.1]}
-                  color={0xB275FB}
-                  intensity={0.4}
-                  distance={1}
-                  decay={1}
+        color={0xB275FB}
+        intensity={0.4}
+        distance={1}
+        decay={1}
       />
       <pointLight position={[-0.1, 0, 4.1]}
-                  color={0x4AC0FF}
-                  intensity={0.4}
-                  distance={1}
-                  decay={1}
+        color={0x4AC0FF}
+        intensity={0.4}
+        distance={1}
+        decay={1}
       />
       <OrbitControls target={[0, 0, 3.7]} enablePan={false} enableZoom={false} />
-        <Model />
-        <BakeShadows />
-        <Preload all />
+      <Model />
+      <BakeShadows />
+      <Preload all />
     </Canvas>
   )
 }
