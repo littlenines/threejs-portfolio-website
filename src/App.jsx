@@ -27,8 +27,8 @@ function App() {
             <HeroInfo />
 
             <div className="buttons">
-              <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon_size" />} />
-              <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon_size" />} />
+              <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon_size" />} aria-label='github'/>
+              <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon_size" />} aria-label='linkedin' />
               <GooeyButton isGradientBorder title="Download CV" />
             </div>
           </div>
