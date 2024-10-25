@@ -1,0 +1,7 @@
+@use "../../styles/variables" as *;
+
+.title {
+    font-size: $font-lg;
+    text-align: center;
+    margin-bottom: $margin-xl;
+}

@@ -1,12 +1,11 @@
 @use "./styles/variables" as *;
-
+// TODO: Improve tablet version
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  margin-bottom: $margin-xl;
 }
 
 .hero_info {
@@ -42,13 +41,6 @@
   gap: 16px;
 }
 
-.projects_title,
-.skills_title {
-  font-size: $font-lg;
-  text-align: center;
-  margin-bottom: $margin-xl;
-}
-
 // icons
 .icon_size {
   font-size: 3em;
@@ -67,22 +59,16 @@
   text-align: center;
 }
 
-.contact_title {
-  font-size: $font-lg;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 .contact_subtitle {
   font-size: $font-2sm;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: $margin-md;
 }
 
 .contact_email {
   font-size: $font-md;
   font-weight: 600;
-  padding-bottom: 16px;
+  padding-bottom: $padding-sm;
   margin-bottom: 14px;
   position: relative;
 
@@ -108,6 +94,10 @@
 
 // Media query
 @media (min-width: $media-tablet) {
+  .hero {
+    margin-bottom: $margin-xl;
+  }
+
   .projects_card {
     flex-direction: row;
     flex-wrap: wrap;
@@ -180,7 +170,7 @@
   }
 
   .contact_info {
-    padding: 40px 0;
+    padding: 0 0 40px 0;
   }
 
   .contact_subtitle {

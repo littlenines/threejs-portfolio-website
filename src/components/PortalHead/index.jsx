@@ -4,6 +4,7 @@ import { Preload, OrbitControls } from '@react-three/drei';
 import WheatleyPortalModel from "../../models/wheatleyPortal"
 import { useGLTF, useAnimations, BakeShadows } from '@react-three/drei'
 import WheatleyGLTF from '../../assets/3D/portal.glb'
+import Loader from "../Loader";
 
 const headProps = {
   scale: [31, 31, 31],
@@ -23,7 +24,12 @@ const Model = memo(() => {
     }
   }, [actions]);
 
-  return <WheatleyPortalModel nodes={nodes} materials={materials} modelRef={group} {...headProps} />;
+  return (
+    <Suspense fallback={<Loader />}>
+    <WheatleyPortalModel nodes={nodes} materials={materials} modelRef={group} {...headProps} />;
+    </Suspense>
+
+  ) 
 });
 
 const PortalHead = () => {
@@ -44,11 +50,9 @@ const PortalHead = () => {
                   decay={1}
       />
       <OrbitControls target={[0, 0, 3.7]} enablePan={false} enableZoom={false} />
-      <Suspense fallback={null}>
         <Model />
         <BakeShadows />
         <Preload all />
-      </Suspense>
     </Canvas>
   )
 }
