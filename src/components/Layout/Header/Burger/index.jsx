@@ -12,7 +12,7 @@ const Burger = ({active, setActive, isDragging = false, burgerClass = ''}) => {
     };
 
     return (
-        <div className={`${styles.burger} ${burgerClass}`} onClick={handleClick}>
+        <div className={`${styles.burger} ${burgerClass}`.trim()} onClick={handleClick}>
             <svg
                 className={`${styles.ham} ${styles.hamRotate} ${styles.ham1}  ${isActive ? styles.active : ''}`}
                 viewBox="0 0 100 100"

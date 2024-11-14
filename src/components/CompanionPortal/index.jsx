@@ -42,7 +42,7 @@ const CubePortal = () => {
     if (isMobile) return null;
 
     return (
-        <Canvas dpr={[1, 1.5]} gl={{ antialias: true }} camera={{ near: 0.1, far: 1000 }} className={style.canvas} >
+        <Canvas dpr={[1, 1.5]} gl={{ antialias: true }} camera={{ near: 0.1, far: 1000 }} id={style.canvas} >
             <ambientLight intensity={0.8} />
             <directionalLight position={[2, 5, 0]} color={0xB275FB} intensity={0.5} />
             <pointLight position={[-0.5, 0, 4.1]}

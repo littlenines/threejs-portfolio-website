@@ -90,7 +90,7 @@
   }
 }
 
-@media(min-width: 1200px) {
+@media(min-width: $media-laptop) {
 
   .gooey_button,
   .gooey_button_outlined {

@@ -14,19 +14,15 @@
   align-items: center;
 }
 
-.model {
-  position: relative;
-}
-
-.buttons {
+.hero_info_buttons {
   display: flex;
-  gap: 8px;
   align-items: center;
-  width: 100%;
   flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
 }
 
-.liquid_model_desktop {
+.liquid_circle--desktop {
   display: none;
 }
 
@@ -42,7 +38,7 @@
 }
 
 // icons
-.icon_size {
+.icon--medium {
   font-size: 3em;
 }
 
@@ -54,45 +50,6 @@
   justify-content: center;
 }
 
-// Contact
-.contact_info {
-  text-align: center;
-}
-
-.contact_subtitle {
-  font-size: $font-2sm;
-  font-weight: 500;
-  margin-bottom: $margin-md;
-}
-
-.contact_email {
-  font-size: $font-md;
-  font-weight: 600;
-  padding-bottom: $padding-sm;
-  margin-bottom: 14px;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background: $primary-gradient;
-    transition: width 0.5s ease;
-  }
-
-  &:hover::after {
-    width: 100%;
-  }
-}
-
-.contact_cube {
-  display: none;
-}
-
-// Media query
 @media (min-width: $media-tablet) {
   .hero {
     margin-bottom: $margin-xl;
@@ -106,9 +63,12 @@
     margin: 0 auto;
   }
 
+  .projects_card_item:not(:last-child) {
+    margin-bottom: 38px;
+  }
+
   .projects_card_item {
-    width: calc(50% - 60px);
-    margin-bottom: 100px;
+    width: calc(50% - 35px);
     text-align: center;
     box-sizing: border-box;
     display: inline-block;
@@ -122,30 +82,9 @@
   .skills_wrap {
     gap: 24px;
   }
-
-  .contact_info {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: unset;
-    gap: 20px;
-  }
-
-  .contact_subtitle {
-    font-size: $font-md;
-  }
-
-  .contact_email {
-    width: fit-content;
-    font-size: $font-lg;
-  }
-
-  .contact_cube {
-    display: block;
-  }
 }
 
-@media (min-width: $media-desktop) {
+@media (min-width: $media-laptop) {
   .hero {
     flex-direction: unset;
   }
@@ -154,30 +93,26 @@
     align-items: unset;
   }
 
-  .liquid_model_desktop {
+  .liquid_circle--desktop {
     display: block;
   }
 
-  .buttons {
+  .hero_info_buttons {
     gap: 16px;
     width: fit-content;
     justify-content: unset;
     flex-direction: unset;
   }
 
-  .icon_size {
+  .icon--medium {
     font-size: 4em;
   }
 
-  .contact_info {
-    padding: 0 0 40px 0;
+  .projects_card_item:last-child {
+    margin-bottom: 58px;
   }
 
-  .contact_subtitle {
-    font-size: $font-lg;
-  }
-
-  .contact_email {
-    font-size: $font-2lg;
+  .projects_card_item {
+    width: calc(50% - 60px);
   }
 }

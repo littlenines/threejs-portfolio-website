@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+
+.contact_info {
+    text-align: center;
+}
+
+.contact_subtitle {
+    font-size: $font-2sm;
+    font-weight: 500;
+    margin-bottom: $margin-md;
+}
+
+.contact_email {
+    font-size: $font-2sm;
+    font-weight: 600;
+    padding-bottom: $padding-sm;
+    width: fit-content;
+    margin: 0 auto 14px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: $primary-gradient;
+        transition: width 0.5s ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.contact_cube {
+    display: none;
+}
+
+@media (min-width: $media-mobile) {
+    .contact_email {
+        font-size: $font-md;
+    }
+}
+
+@media (min-width: $media-tablet) {
+    .contact_info {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: unset;
+        gap: 20px;
+    }
+
+    .contact_subtitle {
+        font-size: $font-md;
+    }
+
+    .contact_email {
+        margin: 0 0 14px;
+        font-size: $font-lg;
+    }
+
+    .contact_cube {
+        display: block;
+    }
+}
+
+@media (min-width: $media-laptop) {
+    .contact_info {
+        padding: 0 0 40px 0;
+    }
+
+    .contact_subtitle {
+        font-size: $font-lg;
+    }
+
+    .contact_email {
+        font-size: $font-2lg;
+    }
+}

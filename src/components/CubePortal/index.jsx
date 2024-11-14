@@ -31,7 +31,7 @@ const ModelCube = memo(() => {
   // Frame update logic for cube rotation
   let frameCount = 0;
   useFrame(() => {
-    if (++frameCount % 4 !== 0) return; // Update every 4th frame
+    if (++frameCount % 5 !== 0) return; // Update every 5th frame
 
     cubeRefs.forEach(ref => {
       if (ref.current) {
@@ -44,18 +44,16 @@ const ModelCube = memo(() => {
   return (
     <>
       {cubeConfigs.map((config, index) => (
-        <Float
-          key={index}
-          speed={config.float.speed}
-          floatIntensity={config.float.floatIntensity}
-          floatingRange={config.float.floatingRange}
+        <Float key={index}
+               speed={config.float.speed}
+               floatIntensity={config.float.floatIntensity}
+               floatingRange={config.float.floatingRange}
         >
           <Suspense fallback={null}>
-            <CubePortalModel
-              {...config.props}
-              cubeRef={cubeRefs[index]} // Use the ref directly
-              nodes={memoizedNodes}
-              materials={memoizedMaterials}
+            <CubePortalModel {...config.props}
+                             cubeRef={cubeRefs[index]}
+                             nodes={memoizedNodes}
+                             materials={memoizedMaterials}
             />
           </Suspense>
         </Float>

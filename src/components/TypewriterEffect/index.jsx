@@ -1,11 +1,12 @@
 import { useState, useEffect, memo } from 'react';
+import PropTypes from 'prop-types';
 
-const TypewriterEffect = () => {
+const TypewriterEffect = ({typewrite}) => {
   const [currentWordIndex] = useState(0); // Track which word we're typing
   const [displayedText, setDisplayedText] = useState(''); // Current displayed text
   const [isDeleting, setIsDeleting] = useState(false); // Deleting or typing
   const [speed, setSpeed] = useState(200); // Typing speed
-  const [words] = useState(['FRONTEND DEVELOPER']); // Words to type
+  const [words] = useState([typewrite]); // Words to type
 
   useEffect(() => {
     const handleTyping = () => {
@@ -39,9 +40,13 @@ const TypewriterEffect = () => {
   }, [currentWordIndex, displayedText, isDeleting, speed, words]);
 
   return (
-    <>{displayedText}<span className="cursor">|</span></>
+    <>{displayedText}<span>|</span></>
   );
 };
+
+TypewriterEffect.propTypes = {
+  typewrite: PropTypes.string,
+}
 
 
 export default memo(TypewriterEffect);

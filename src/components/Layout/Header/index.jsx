@@ -94,7 +94,7 @@ function Header() {
   };
 
   return (
-    <header className={`${styles.header} ${active ? styles.active : ''}`}>
+    <header className={`${styles.header} ${active ? styles.active : ''}`.trim()}>
       <div ref={menuRef}
            onMouseDown={dragMouseDown}
            onTouchStart={dragMouseDown}

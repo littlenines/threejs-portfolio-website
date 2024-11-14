@@ -46,9 +46,10 @@ $font-xxxl: 11rem;
 $font-title: 13rem;
 
 // Media query
-// Todo: add more sizes
+$media-mobile: 375px;
 $media-tablet: 768px;
-$media-desktop: 1200px;
+$media-laptop: 1200px;
+$media-desktop: 1280px;
 
 // Gradient colors
 $primary-gradient: linear-gradient(270deg, #4ac0ff 0%, #b275fb 100%);

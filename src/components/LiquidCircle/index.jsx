@@ -5,7 +5,7 @@ import styles from './LiquidCircle.module.scss'
 
 const LiquidCircle = ({liquidClass = ''}) => {
   return (
-    <div className={`${styles.liquid_circle} ${liquidClass}`}><PortalHead /></div>
+    <div className={`${styles.liquid_circle} ${liquidClass}`.trim()}><PortalHead /></div>
   )
 }
 

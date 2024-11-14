@@ -1,5 +1,19 @@
-.canvas {
-    canvas {
-        height: 170px;
+@use "../../styles/variables" as *;
+
+@media (min-width: $media-tablet) {
+    #canvas {
+        canvas {
+            width: 200px;
+            height: 150px;
+        }
+    }
+}
+
+@media (min-width: $media-laptop) {
+    #canvas {
+        canvas {
+            width: unset;
+            height: 170px;
+        }
     }
 }

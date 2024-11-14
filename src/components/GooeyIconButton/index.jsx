@@ -17,7 +17,7 @@ const GooeyIconButton = ({ icon, buttonClassName = '', gooeyClassName='', isGrad
             <div className={styles.gooey}>
                 <div className={isGradientBorder ? styles.gooey_border : ''}>
 
-                <button className={`${isGradientBorder ? styles.gooey_button_outlined : styles.gooey_button} ${buttonClassName}`} {...props}>{icon}</button>
+                <button className={`${isGradientBorder ? styles.gooey_button_outlined : styles.gooey_button} ${buttonClassName}`.trim()} {...props}>{icon}</button>
                 <span className={styles.bubbles}>
                     <span className={`${styles.bubble} ${gooeyClassName}`}></span>
                     <span className={`${styles.bubble} ${gooeyClassName}`}></span>

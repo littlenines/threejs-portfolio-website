@@ -120,7 +120,7 @@ a {
   top: 0;
 }
 
-.container, .container_md {
+.container--default, .container--medium {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 1600px;
@@ -129,7 +129,7 @@ a {
   margin-right: auto;
 }
 
-.container_md {
+.container--medium {
   max-width: 1400px;
 }
 
@@ -147,7 +147,7 @@ text {
 }
 
 @media(min-width: 1200px) {
-  .container {
+  .container--default {
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;

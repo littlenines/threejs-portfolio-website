@@ -5,7 +5,7 @@
   height: 300px;
   background: $primary-gradient;
   animation: wave 4s ease-in-out infinite;
-  margin-bottom: $margin-sm;
+  margin-bottom: $margin-md;
 }
 
 @keyframes wave {
@@ -18,10 +18,17 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $media-laptop) {
+  .liquid_circle {
+    width: 550px;
+    height: 550px;
+    margin-bottom: unset;
+  }
+}
+
+@media (min-width: $media-desktop) {
   .liquid_circle {
     width: 700px;
     height: 700px;
-    margin-bottom: unset;
   }
 }

@@ -43,6 +43,12 @@
 
 @media (min-width: $media-tablet) {
   .lab_image {
+    height: 500px;
+  }
+}
+
+@media (min-width: $media-laptop) {
+  .lab_image {
     height: 640px;
   }
 }
