@@ -1,5 +1,5 @@
-import { memo, useRef, useEffect, lazy, Suspense, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { memo, useRef, lazy, Suspense, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Preload, OrbitControls, Float, useGLTF, BakeShadows } from '@react-three/drei';
 const CubePortalModel = lazy(() => import("../../models/cubePortal"));
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
@@ -18,12 +18,6 @@ const ModelCube = memo(() => {
   const { nodes, materials } = useGLTF(PortalCubeGLTF, true, true);
   const memoizedNodes = useMemo(() => nodes, [nodes]);
   const memoizedMaterials = useMemo(() => materials, [materials]);
-
-  // Access WebGL context info for logging
-  const { gl } = useThree();
-  useEffect(() => {
-    console.log(gl.info); // Log memory usage and geometry counts
-  }, [gl]);
 
   // Initialize refs for each cube
   const cubeRefs = cubeConfigs.map(() => useRef());
