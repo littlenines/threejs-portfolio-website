@@ -13,108 +13,114 @@
     },
     {
         "id": 2,
+        "image": "/skills/sass.svg",
+        "text": "Sass",
+        "alt": "Sass"
+    },
+    {
+        "id": 3,
         "image": "/skills/js.svg",
         "text": "Javascript",
         "alt": "javascript"
     },
     {
-        "id": 3,
+        "id": 4,
         "image": "/skills/typescript.svg",
         "text": "Typescript",
         "alt": "typescript"
     },
     {
-        "id": 4,
+        "id": 5,
         "image": "/skills/react.svg",
         "text": "React",
         "alt": "react"
     },
     {
-        "id": 5,
+        "id": 6,
         "image": "/skills/nextjs.svg",
         "text": "Next.js",
         "alt": "nextjs"
     },
     {
-        "id": 6,
+        "id": 7,
         "image": "/skills/mui.svg",
         "text": "Mui",
         "alt": "mui"
     },
     {
-        "id": 7,
+        "id": 8,
         "image": "/skills/vuejs.svg",
         "text": "Vue",
         "alt": "vue"
     },
     {
-        "id": 8,
+        "id": 9,
         "image": "/skills/nuxt.svg",
         "text": "Nuxt",
         "alt": "nuxt"
     },
     {
-        "id": 9,
+        "id": 10,
         "image": "/skills/vuetify.svg",
         "text": "Vuetify",
         "alt": "vuetify"
     },
     {
-        "id": 10,
+        "id": 11,
         "image": "/skills/threejs.svg",
         "text": "Three.js",
         "alt": "threejs"
     },
     {
-        "id": 11,
+        "id": 12,
         "image": "/skills/webpack.svg",
         "text": "Webpack",
         "alt": "webpack"
     },
     {
-        "id": 12,
+        "id": 13,
         "image": "/skills/gulp.svg",
         "text": "Gulp",
         "alt": "gulp"
     },
     {
-        "id": 13,
+        "id": 14,
         "image": "/skills/axios.svg",
         "text": "Axios",
         "alt": "axios"
     },
     {
-        "id": 14,
+        "id": 15,
         "image": "/skills/git.svg",
         "text": "Git",
         "alt": "git"
     },
     {
-        "id": 15,
+        "id": 16,
         "image": "/skills/github.svg",
         "text": "GitHub",
         "alt": "github"
     },
     {
-        "id": 16,
+        "id": 17,
         "image": "/skills/gitlab.svg",
         "text": "GitLab",
         "alt": "gitlab"
     },
     {
-        "id": 17,
+        "id": 18,
         "image": "/skills/postman.svg",
         "text": "Postman",
         "alt": "postman"
     },
     {
-        "id": 18,
+        "id": 19,
         "image": "/skills/jira.svg",
         "text": "Jira",
         "alt": "jira"
     },
     {
-        "id": 19,
+        "id": 20,
         "image": "/skills/trello.svg",
         "text": "Trello",
         "alt": "trello"
