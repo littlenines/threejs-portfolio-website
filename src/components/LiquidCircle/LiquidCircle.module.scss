@@ -6,6 +6,7 @@
   background: $primary-gradient;
   animation: wave 4s ease-in-out infinite;
   margin-bottom: $margin-md;
+  will-change: border-radius;
 }
 
 @keyframes wave {
