@@ -24,7 +24,7 @@ const ModelCube = memo(() => {
   // Frame update logic for cube rotation
   let frameCount = 0;
   useFrame((_state, delta) => {
-    if (++frameCount % 5 !== 0) return; // Update every 5th frame
+    if (++frameCount % 4 !== 0) return; // Update every 4th frame
 
     cubeRefs.forEach(ref => {
       if (ref.current) {

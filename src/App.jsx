@@ -10,7 +10,7 @@ import GooeyIconButton from "./components/GooeyIconButton";
 import HeroInfo from "./components/HeroInfo";
 import Loader from "./components/Loader";
 const LabItem = lazy(() => import("./components/LabItem"));
-// const CubePortal = lazy(() => import("./components/CubePortal"));
+const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
 const ContactMe = lazy(() => import("./components/ContactMe"));
 import projects from "./assets/json/projects.json"
@@ -46,7 +46,7 @@ function App() {
       </Section>
 
       {/* Cubes */}
-      {/* <CubePortal /> */}
+      <CubePortal />
 
       {/* Personal Projects */}
       <Section title='Personal Projects'>
