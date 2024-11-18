@@ -1,3 +1,5 @@
+@use '../../../../styles/variables' as *;
+
 .burger {
   overflow: hidden;
   z-index: 2;
@@ -26,7 +28,7 @@
 .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #fff;
+  stroke: $color-light;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -47,8 +49,7 @@
   stroke-dashoffset: -138px;
 }
 
-@media(min-width: 768px) {
-
+@media(min-width: $media-laptop) {
   .ham {
     width: 60px;
   }

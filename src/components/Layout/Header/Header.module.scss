@@ -4,15 +4,15 @@
   position: sticky;
   top: 0;
   display: flex;
-  background-color: #1a1a1a;
+  background-color: $color-dark;
   justify-content: space-between;
   z-index: 2;
 }
 
 .tabs {
   display: flex;
-  gap: 20px;
   justify-content: flex-end;
+  gap: 20px;
 }
 
 li {
@@ -59,7 +59,7 @@ li {
   width: 70px;
 }
 
-@media(min-width: 768px) {
+@media(min-width: $media-laptop) {
   .menu {
     top: 20px;
     right: 20px;

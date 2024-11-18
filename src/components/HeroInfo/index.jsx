@@ -1,13 +1,11 @@
 import { memo } from "react";
 import PropTypes from 'prop-types';
 import TypewriterEffect from "../TypewriterEffect";
-import LiquidCircle from "../LiquidCircle";
 import styles from './HeroInfo.module.scss'
 
 const HeroInfo = ({title, description, typewrite}) => {
   return (
     <>
-      <LiquidCircle liquidClass={styles.liquid_model} />
       <h1 className={styles.title}>
         {title}
       </h1>

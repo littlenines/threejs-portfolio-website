@@ -1,6 +1,6 @@
 import { memo, useRef, lazy, Suspense, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Preload, OrbitControls, Float, useGLTF, BakeShadows } from '@react-three/drei';
+import { Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
 const CubePortalModel = lazy(() => import("../../models/cubePortal"));
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
 
@@ -22,10 +22,7 @@ const ModelCube = memo(() => {
   const cubeRefs = cubeConfigs.map(() => useRef());
 
   // Frame update logic for cube rotation
-  let frameCount = 0;
   useFrame((_state, delta) => {
-    if (++frameCount % 4 !== 0) return; // Update every 4th frame
-
     cubeRefs.forEach(ref => {
       if (ref.current) {
         ref.current.rotation.y += delta;
@@ -34,7 +31,7 @@ const ModelCube = memo(() => {
     });
   });
 
-  return (
+  return ( // TODO: Instancing
     <>
       {cubeConfigs.map((config, index) => (
         <Float key={index}
@@ -61,11 +58,10 @@ const CubePortal = () => {
     if (isMobile) return null;
 
     return (
-        <Canvas dpr={[0.6, 0.7]} gl={{ antialias: true }} camera={{ near: 0.1, far: 10 }} style={{ position: 'absolute' }} className="canvas_cube">
+        <Canvas dpr={[0.6, 0.7]} gl={{ antialias: true, powerPreference: "low-power" }} camera={{ near: 0.1, far: 10 }} style={{ position: 'absolute' }} className="canvas_cube">
             <ambientLight intensity={0.8} />
             <directionalLight position={[5, 12, 0]} color={0xB275FB} intensity={0.7} />
             <directionalLight position={[7, 12, 0]} color={0x4AC0FF} intensity={0.6} />
-            <OrbitControls target={[0, 0, 4]} enablePan={false} enableZoom={false} />
             <ModelCube />
             <BakeShadows />
             <Preload all />

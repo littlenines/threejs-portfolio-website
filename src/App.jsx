@@ -41,7 +41,7 @@ function App() {
               </Link>
             </div>
           </div>
-          <LiquidCircle liquidClass="liquid_circle--desktop" />
+          <LiquidCircle />
         </div>
       </Section>
 

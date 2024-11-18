@@ -1,4 +1,4 @@
-import { memo, useState, useRef, useEffect } from 'react';
+import { memo, useState, useRef, useEffect, useCallback } from 'react';
 import Burger from './Burger';
 import useViewport from '../../../utils/useViewport';
 import styles from './Header.module.scss';
@@ -49,9 +49,8 @@ function Header() {
     }
   };
 
-  const elementDrag = (e) => {
+  const elementDrag = useCallback((e) => {
     e.preventDefault();
-
     const deltaX = getClientX(e) - pos3.current;
     const deltaY = getClientY(e) - pos4.current;
     const distanceMoved = Math.sqrt(deltaX ** 2 + deltaY ** 2);
@@ -60,7 +59,6 @@ function Header() {
       setIsDragging(true);
     }
 
-    // Calculate the new cursor position
     pos1.current = pos3.current - getClientX(e);
     pos2.current = pos4.current - getClientY(e);
     pos3.current = getClientX(e);
@@ -72,7 +70,6 @@ function Header() {
       let newX = prevPos.x - pos1.current;
       let newY = prevPos.y - pos2.current;
 
-      // Boundary checks to prevent dragging outside the viewport
       const headerWidth = menuRef.current.offsetWidth;
       const headerHeight = menuRef.current.offsetHeight;
 
@@ -81,17 +78,25 @@ function Header() {
 
       return { x: newX, y: newY };
     });
-  };
+  }, [viewportWidth, viewportHeight]);
 
-  const closeDragElement = () => {
+  const closeDragElement = useCallback(() => {
     document.removeEventListener('mousemove', elementDrag, { passive: false });
     document.removeEventListener('mouseup', closeDragElement, { passive: false });
     document.removeEventListener('touchmove', elementDrag, { passive: false });
     document.removeEventListener('touchend', closeDragElement, { passive: false });
 
-    // Slight delay to prevent click event after dragging
     setTimeout(() => setIsDragging(false), 100);
-  };
+  }, [elementDrag]);
+
+  useEffect(() => {
+    return () => {
+      document.removeEventListener('mousemove', elementDrag);
+      document.removeEventListener('mouseup', closeDragElement);
+      document.removeEventListener('touchmove', elementDrag);
+      document.removeEventListener('touchend', closeDragElement);
+    };
+  }, [elementDrag, closeDragElement]);
 
   return (
     <header className={`${styles.header} ${active ? styles.active : ''}`.trim()}>

@@ -16,9 +16,7 @@ const ModelCompanionCube = memo(() => {
     const memoizedMaterials = useMemo(() => materials, [materials]);
     const companionRef = useRef();
 
-    let frameCount = 0;
     useFrame((_state, delta) => {
-        if (++frameCount % 4 !== 0) return; // Update every 4th frame
         if(companionRef.current) companionRef.current.rotation.y += delta;
     });
 

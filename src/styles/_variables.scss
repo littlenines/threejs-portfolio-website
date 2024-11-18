@@ -29,6 +29,7 @@ $padding-xxl: 80px;
 $color-dark: #1a1a1a;
 $color-dim: #242629;
 $color-light: #ffffff;
+$color-light-dim: #F8F8F8;
 $text-color: #cccccc;
 
 // Font
@@ -36,8 +37,10 @@ $font-xxs: 1.2rem;
 $font-xms: 1.4rem;
 $font-xs: 1.6rem;
 $font-sm: 1.8rem;
+$font-base: 2rem;
 $font-2sm: 2.2rem;
 $font-md: 2.4rem;
+$font-2md: 2.8rem;
 $font-lg: 3.2rem;
 $font-2lg: 3.8rem;
 $font-xl: 4.8rem;
@@ -47,9 +50,17 @@ $font-title: 13rem;
 
 // Media query
 $media-mobile: 375px;
+
 $media-tablet: 768px;
+$media-tablet-big: 1024px;
+
 $media-laptop: 1200px;
-$media-desktop: 1280px;
+$media-laptop-medium: 1280px; 
+$media-laptop-large: 1366px;       
+
+$media-desktop-standard: 1440px;
+$media-desktop-large: 1920px; // TODO
+$media-desktop-ultra: 2560px; // TODO
 
 // Gradient colors
 $primary-gradient: linear-gradient(270deg, #4ac0ff 0%, #b275fb 100%);

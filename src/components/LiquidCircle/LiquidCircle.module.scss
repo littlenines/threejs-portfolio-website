@@ -1,12 +1,12 @@
 @use "../../styles/variables" as *;
 
 .liquid_circle {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: $primary-gradient;
-  animation: wave 4s ease-in-out infinite;
   margin-bottom: $margin-md;
   will-change: border-radius;
+  animation: wave 4s ease-in-out infinite;
 }
 
 @keyframes wave {
@@ -19,6 +19,20 @@
   }
 }
 
+@media (min-width: $media-mobile) {
+  .liquid_circle {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (min-width: $media-tablet-big) {
+  .liquid_circle {
+    width: 350px;
+    height: 350px;
+  }
+}
+
 @media (min-width: $media-laptop) {
   .liquid_circle {
     width: 550px;
@@ -27,9 +41,9 @@
   }
 }
 
-@media (min-width: $media-desktop) {
+@media (min-width: $media-desktop-standard) {
   .liquid_circle {
-    width: 700px;
-    height: 700px;
+    width: 650px;
+    height: 650px;
   }
 }

@@ -1,20 +1,15 @@
 @use '../../styles/variables' as *;
 
 .title {
-  font-size: 2rem;
+  font-size: $font-base;
   line-height: 1;
   margin-bottom: 8px;
-  color: #F8F8F8;
+  color: $color-light-dim;
   width: 100%;
 }
 
-.title_name {
-  font-size: $font-xxl;
-  font-weight: 700;
-}
-
 .developer {
-  font-size: 1.8rem;
+  font-size: $font-sm;
   margin-bottom: 8px;
   background: $gradient-text;
   color: transparent;
@@ -26,40 +21,60 @@
 
 .subtext {
   color: $text-color;
-  max-width: 650px;
-  font-size: 1.6rem;
+  max-width: 625px;
+  font-size: $font-xs;
   line-height: 32px;
   margin-bottom: $margin-sm;
 }
 
-@media(min-width: $media-laptop) {
-  .liquid_model {
-    display: none;
+@media (min-width: $media-tablet-big) {
+  .title {
+    font-size: $font-2sm;
   }
 
+  .developer {
+    font-size: $font-base;
+  }
+
+  .subtext {
+    font-size: $font-sm;
+  }
+}
+
+@media(min-width: $media-laptop) {
   .title {
-  font-size: 4.8rem;
+    font-size: $font-2lg;
     margin-bottom: 20px;
     width: unset;
-
-  }
-
-  .title_name {
-    font-size: $font-title;
   }
 
   .developer {
     text-align: unset;
-  font-size: 3.2rem;
-  width: unset;
+    font-size: $font-2md;
+    width: unset;
     margin-bottom: $margin-sm;
   }
 
   .subtext {
     text-align: unset;
     line-height: 40px;
-    font-size: 2.8rem;
+    font-size: $font-md;
     margin-bottom: $margin-md;
+  }
+}
 
+@media(min-width: $media-desktop-standard) {
+
+  .title {
+    font-size: $font-xl;
+  }
+
+  .developer {
+    font-size: $font-lg;
+  }
+
+  .subtext {
+    font-size: $font-2md;
+    max-width: 650px;
   }
 }
