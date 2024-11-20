@@ -3,6 +3,7 @@ import { Canvas, useFrame} from "@react-three/fiber";
 import { Preload, useGLTF, BakeShadows } from '@react-three/drei';
 const CompanionPortalModel = lazy(() => import("../../models/companionPortal"));
 import PortalCompanionCubeGLTF from '../../assets/3D/cube_companion.glb'
+import useIsMobile from "../../utils/useIsMobile";
 import style from './Companion.module.scss'
 
 const companionProps = {
@@ -17,17 +18,16 @@ const ModelCompanionCube = memo(() => {
     const companionRef = useRef();
 
     useFrame((_state, delta) => {
-        if(companionRef.current) companionRef.current.rotation.y += delta;
+        if(companionRef.current) companionRef.current.rotation.y += delta * 0.5;
     });
 
     return (
         <>
             <Suspense fallback={null}>
-                <CompanionPortalModel
-                    companionRef={companionRef}
-                    nodes={memoizedNodes}
-                    materials={memoizedMaterials}
-                    {...companionProps}
+                <CompanionPortalModel companionRef={companionRef}
+                                      nodes={memoizedNodes}
+                                      materials={memoizedMaterials}
+                                      {...companionProps}
                 />
                 <BakeShadows />
             </Suspense>
@@ -36,7 +36,7 @@ const ModelCompanionCube = memo(() => {
 });
 
 const CubePortal = () => {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = useIsMobile();
 
     if (isMobile) return null;
 

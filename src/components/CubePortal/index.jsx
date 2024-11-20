@@ -1,72 +1,89 @@
-import { memo, useRef, lazy, Suspense, useMemo } from "react";
+import { memo, useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
-const CubePortalModel = lazy(() => import("../../models/cubePortal"));
+import { Instances, Instance, Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
+import useIsMobile from "../../utils/useIsMobile";
 
 const ModelCube = memo(() => {
+  
+  const { nodes, materials } = useGLTF(PortalCubeGLTF, true);
+
   const cubeConfigs = [
-    { props: { scale: [0.07, 0.07, 0.07], position: [0.5, 1, 1], rotation: [0.4, 4.3, 1.02] }, float: { speed: 2, floatIntensity: 0.2, floatingRange: [0, 0] } },
-    { props: { scale: [0.06, 0.06, 0.06], position: [-1.2, -0.5, 1] }, float: { speed: 2, floatIntensity: 1, floatingRange: [0, 0] } },
-    { props: { scale: [0.07, 0.07, 0.07], position: [0.7, -1, 1], rotation: [0.4, 4.3, 1.02] }, float: { speed: 1, floatIntensity: 2, floatingRange: [0, 0.1] } },
-    { props: { scale: [0.05, 0.05, 0.05], position: [0, 0, 1] }, float: { speed: 1, floatIntensity: 1, floatingRange: [0, 0] } },
-    { props: { scale: [0.04, 0.04, 0.04], position: [-0.9, -1.5, 1], rotation: [0.5, 2.3, 1.5] }, float: { speed: 1, floatIntensity: 1, floatingRange: [0, 0] } },
-    { props: { scale: [0.06, 0.06, 0.06], position: [0.3, -1.8, 1], rotation: [0.6, 2.8, 1.5] }, float: { speed: 1, floatIntensity: 1, floatingRange: [0, 0] } },
+    { scale: [0.007, 0.007, 0.007], position: [0.5, 1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
+    { scale: [0.006, 0.006, 0.006], position: [-1.2, -0.5, 1], float: { speed: 2, intensity: 1, range: [0, 0] } },
+    { scale: [0.007, 0.007, 0.007], position: [0.7, -1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 1, intensity: 2, range: [0, 0.1] } },
+    { scale: [0.005, 0.005, 0.005], position: [0, 0, 1], float: { speed: 1, intensity: 1, range: [0, 0] } },
+    { scale: [0.004, 0.004, 0.004], position: [-0.9, -1.5, 1], rotation: [0.5, 2.3, 1.5], float: { speed: 1, intensity: 1, range: [0, 0] } },
+    { scale: [0.006, 0.006, 0.006], position: [0.3, -1.8, 1], rotation: [0.6, 2.8, 1.5], float: { speed: 1, intensity: 1, range: [0, 0] } },
   ];
 
-  const { nodes, materials } = useGLTF(PortalCubeGLTF, true, true);
-  const memoizedNodes = useMemo(() => nodes, [nodes]);
-  const memoizedMaterials = useMemo(() => materials, [materials]);
 
-  // Initialize refs for each cube
-  const cubeRefs = cubeConfigs.map(() => useRef());
+  const instanceConfigs = [
+    { geometry: nodes.Object_7.geometry, material: materials.materialsmodelspropsmetal_box },
+  ];
 
-  // Frame update logic for cube rotation
+  const cubeRefs = useRef([]);
+
   useFrame((_state, delta) => {
-    cubeRefs.forEach(ref => {
-      if (ref.current) {
-        ref.current.rotation.y += delta;
-        ref.current.rotation.x += delta;
+    cubeRefs.current.forEach(ref => {
+      if (ref) {
+        ref.rotation.y += delta * 0.4;
+        ref.rotation.x += delta * 0.4;
       }
     });
   });
 
-  return ( // TODO: Instancing
+  const cubes = useMemo(() => (
+    cubeConfigs.map((config, idx) => (
+      <Float key={idx}
+             autoInvalidate
+             speed={config.float.speed} 
+             floatIntensity={config.float.intensity} 
+             floatingRange={config.float.range}>
+        <Instance ref={el => cubeRefs.current[idx] = el}
+                  position={config.position}
+                  scale={config.scale}
+                  rotation={config.rotation}
+        />
+      </Float>
+    ))
+  ), [cubeConfigs]);
+
+  return (
     <>
-      {cubeConfigs.map((config, index) => (
-        <Float key={index}
-               speed={config.float.speed}
-               floatIntensity={config.float.floatIntensity}
-               floatingRange={config.float.floatingRange}
+      {instanceConfigs.map((instance, index) => (
+        <Instances key={index}
+                   limit={cubeConfigs.length}
+                   geometry={instance.geometry}
+                   material={instance.material}
         >
-          <Suspense fallback={null}>
-            <CubePortalModel {...config.props}
-                             cubeRef={cubeRefs[index]}
-                             nodes={memoizedNodes}
-                             materials={memoizedMaterials}
-            />
-          </Suspense>
-        </Float>
+          {cubes}
+        </Instances>
       ))}
     </>
   );
 });
 
 const CubePortal = () => {
-    const isMobile = window.innerWidth < 768;
+  const isMobile = useIsMobile();
 
-    if (isMobile) return null;
+  if (isMobile) return null;
 
-    return (
-        <Canvas dpr={[0.6, 0.7]} gl={{ antialias: true, powerPreference: "low-power" }} camera={{ near: 0.1, far: 10 }} style={{ position: 'absolute' }} className="canvas_cube">
-            <ambientLight intensity={0.8} />
-            <directionalLight position={[5, 12, 0]} color={0xB275FB} intensity={0.7} />
-            <directionalLight position={[7, 12, 0]} color={0x4AC0FF} intensity={0.6} />
-            <ModelCube />
-            <BakeShadows />
-            <Preload all />
-        </Canvas>
-    )
+  return (
+    <Canvas dpr={[0.6, 0.7]}
+            frameloop="demand"
+            gl={{ powerPreference: "low-power" }} 
+            camera={{ near: 0.1, far: 10 }} 
+            style={{ position: 'absolute' }} 
+            className="canvas_cube">
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[5, 12, 0]} color={0xB275FB} intensity={0.7} />
+      <directionalLight position={[7, 12, 0]} color={0x4AC0FF} intensity={0.6} />
+      <ModelCube />
+      <BakeShadows />
+      <Preload all />
+    </Canvas>
+  )
 }
 
 export default memo(CubePortal)
