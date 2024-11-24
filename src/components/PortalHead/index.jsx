@@ -1,9 +1,11 @@
-import { memo, useEffect, useRef } from "react";
+import { memo, Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber"
 import { Preload, OrbitControls } from '@react-three/drei';
 import WheatleyPortalModel from "../../models/wheatleyPortal"
 import { useGLTF, useAnimations, BakeShadows } from '@react-three/drei'
 import WheatleyGLTF from '../../assets/3D/portal.glb'
+
+useGLTF.preload(WheatleyGLTF, true, true);
 
 const headProps = {
   scale: [31, 31, 31],

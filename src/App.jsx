@@ -27,9 +27,10 @@ function App() {
     if (progress === 100) setAppReady(true);
   }, [progress]);
 
+  if (!isAppReady) return <Loader aria-live="polite"/>;
+
   return (
     <>
-      {!isAppReady && <Loader aria-live="polite"/>}
       <Header />
       <Section>
         <div className="hero">
