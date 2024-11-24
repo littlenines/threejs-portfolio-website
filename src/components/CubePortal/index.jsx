@@ -2,21 +2,12 @@ import { memo, useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Instances, Instance, Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
+import { useCubeConfigs } from "../../utils/useCubeConfigs";
 import useIsMobile from "../../utils/useIsMobile";
 
 const ModelCube = memo(() => {
-  
   const { nodes, materials } = useGLTF(PortalCubeGLTF, true);
-
-  const cubeConfigs = [
-    { scale: [0.007, 0.007, 0.007], position: [0.5, 1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
-    { scale: [0.006, 0.006, 0.006], position: [-1.2, -0.5, 1], float: { speed: 2, intensity: 1, range: [0, 0] } },
-    { scale: [0.007, 0.007, 0.007], position: [0.7, -1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 1, intensity: 2, range: [0, 0.1] } },
-    { scale: [0.005, 0.005, 0.005], position: [0, 0, 1], float: { speed: 1, intensity: 1, range: [0, 0] } },
-    { scale: [0.004, 0.004, 0.004], position: [-0.9, -1.5, 1], rotation: [0.5, 2.3, 1.5], float: { speed: 1, intensity: 1, range: [0, 0] } },
-    { scale: [0.006, 0.006, 0.006], position: [0.3, -1.8, 1], rotation: [0.6, 2.8, 1.5], float: { speed: 1, intensity: 1, range: [0, 0] } },
-  ];
-
+  const cubeConfigs = useCubeConfigs();
 
   const instanceConfigs = [
     { geometry: nodes.Object_7.geometry, material: materials.materialsmodelspropsmetal_box },
