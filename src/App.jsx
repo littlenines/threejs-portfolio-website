@@ -1,7 +1,8 @@
-import { Suspense, lazy } from "react";
+import { lazy, useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
+import { useProgress } from "@react-three/drei";
 import Section from "./components/Section";
 import Header from './components/Layout/Header'
 import LiquidCircle from "./components/LiquidCircle";
@@ -19,8 +20,16 @@ import skills from './assets/json/skills.json'
 import "./App.scss";
 
 function App() {
+  const [isAppReady, setAppReady] = useState(false);
+  const { progress } = useProgress();
+  
+  useEffect(() => {
+    if (progress === 100) setAppReady(true);
+  }, [progress]);
+
   return (
-    <Suspense fallback={<Loader />}>
+    <>
+      {!isAppReady && <Loader aria-live="polite"/>}
       <Header />
       <Section>
         <div className="hero">
@@ -76,7 +85,7 @@ function App() {
       <Section title='Want to work with me?'>
         <ContactMe title='Send me a message' mail='galbinovic584@gmail.com' />
       </Section>
-    </Suspense>
+    </>
   );
 }
 
