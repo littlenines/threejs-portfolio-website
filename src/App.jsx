@@ -4,7 +4,7 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
 import { useProgress } from "@react-three/drei";
 import Section from "./components/Section";
-import Header from './components/Layout/Header'
+// import Header from './components/Layout/Header'
 import LiquidCircle from "./components/LiquidCircle";
 import GooeyButton from "./components/GooeyButton";
 import GooeyIconButton from "./components/GooeyIconButton";
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Section>
         <div className="hero">
           <div className="hero_info">

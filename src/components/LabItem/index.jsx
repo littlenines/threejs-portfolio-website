@@ -6,7 +6,7 @@ const LabItem = ({image, imageAlt, title, subtitle, ...props}) => {
   return (
     <div {...props}>
       <div className={styles.lab_image}>
-        <img src={image} alt={imageAlt} />
+        <img src={image} alt={imageAlt} loading='lazy' />
       </div>
       <div className={styles.lab_info}>
         <h3 className={styles.lab_info_title}>{title}</h3>
