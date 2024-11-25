@@ -59,7 +59,7 @@ function App() {
       <CubePortal />
 
       {/* Personal Projects */}
-      <Section title='Personal Projects'>
+      {/* <Section title='Personal Projects'>
         <div className="projects_card">
           {projects.map(({ image, imageAlt, title, subtitle }, index) => {
             return (
@@ -73,7 +73,7 @@ function App() {
             );
           })}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Skills */}
       <Section title='Technologies I&apos;ve Been Working With' className="container--medium">
