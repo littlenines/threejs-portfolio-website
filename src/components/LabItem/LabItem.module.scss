@@ -7,7 +7,6 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 12px;
-  transition: $transition-value;
 
   img {
     display: block;
@@ -15,16 +14,6 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
     height: 100%;
     max-width: 100%;
     object-fit: cover;
-    transition: $transition-value;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  &:hover {
-    transform: scale(0.95);
-    cursor: pointer;
   }
 }
 
@@ -45,6 +34,20 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
 @media (min-width: $media-tablet) {
   .lab_image {
     height: 500px;
+    transition: $transition-value;
+
+    img {
+      transition: $transition-value;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover {
+      transform: scale(0.95);
+      cursor: pointer;
+    }
   }
 }
 
