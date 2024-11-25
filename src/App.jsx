@@ -10,7 +10,7 @@ import GooeyButton from "./components/GooeyButton";
 import GooeyIconButton from "./components/GooeyIconButton";
 import HeroInfo from "./components/HeroInfo";
 import Loader from "./components/Loader";
-const LabItem = lazy(() => import("./components/LabItem"));
+import LabItem from "./components/LabItem";
 const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
 const ContactMe = lazy(() => import("./components/ContactMe"));
@@ -59,7 +59,7 @@ function App() {
       <CubePortal />
 
       {/* Personal Projects */}
-      {/* <Section title='Personal Projects'>
+      <Section title='Personal Projects'>
         <div className="projects_card">
           {projects.map(({ image, imageAlt, title, subtitle }, index) => {
             return (
@@ -73,7 +73,7 @@ function App() {
             );
           })}
         </div>
-      </Section> */}
+      </Section>
 
       {/* Skills */}
       <Section title='Technologies I&apos;ve Been Working With' className="container--medium">
