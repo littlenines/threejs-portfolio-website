@@ -45,16 +45,16 @@ const CubePortal = () => {
             <ambientLight intensity={0.8} />
             <directionalLight position={[2, 5, 0]} color={0xB275FB} intensity={0.5} />
             <pointLight position={[-0.5, 0, 4.1]}
-                color={0xB275FB}
-                intensity={0.2}
-                distance={1}
-                decay={1}
+                        color={0xB275FB}
+                        intensity={0.2}
+                        distance={1}
+                        decay={1}
             />
             <pointLight position={[0.5, 0, 4.1]}
-                color={0x4AC0FF}
-                intensity={0.2}
-                distance={1}
-                decay={1}
+                        color={0x4AC0FF}
+                        intensity={0.2}
+                        distance={1}
+                        decay={1}
             />
             <ModelCompanionCube />
             <Preload all />
