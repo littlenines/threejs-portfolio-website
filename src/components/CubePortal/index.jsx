@@ -1,4 +1,4 @@
-import { memo, useRef, useMemo } from "react";
+import { memo, useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Instances, Instance, Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
@@ -70,9 +70,11 @@ const CubePortal = () => {
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 12, 0]} color={0xB275FB} intensity={0.7} />
       <directionalLight position={[7, 12, 0]} color={0x4AC0FF} intensity={0.6} />
-      <ModelCube />
+      <Suspense fallback={null}>
+        <ModelCube />
+        <Preload all />
+      </Suspense>
       <BakeShadows />
-      <Preload all />
     </Canvas>
   )
 }

@@ -29,6 +29,7 @@ const ModelCompanionCube = memo(() => {
                                       materials={memoizedMaterials}
                                       {...companionProps}
                 />
+                <Preload all />
                 <BakeShadows />
             </Suspense>
         </>
@@ -57,7 +58,6 @@ const CubePortal = () => {
                         decay={1}
             />
             <ModelCompanionCube />
-            <Preload all />
         </Canvas>
     )
 }
