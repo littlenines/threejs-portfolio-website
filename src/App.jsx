@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Header />
-      <Section>
+      <Section className="container--hero">
         <div className="hero">
           <div className="hero_info">
             <HeroInfo title='Hey! My name is Nemanja.'

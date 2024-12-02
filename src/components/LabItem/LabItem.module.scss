@@ -34,6 +34,7 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
 @media (min-width: $media-tablet) {
   .lab_image {
     height: 500px;
+    will-change: transform;
     transition: $transition-value;
 
     img {
@@ -48,11 +49,5 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
       transform: scale(0.95);
       cursor: pointer;
     }
-  }
-}
-
-@media (min-width: $media-laptop) {
-  .lab_image {
-    height: 640px;
   }
 }
