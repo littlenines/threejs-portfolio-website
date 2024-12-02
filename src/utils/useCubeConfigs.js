@@ -1,6 +1,6 @@
 export const useCubeConfigs = () => {
     let baseConfigs = [
-        { scale: [0.007, 0.007, 0.007], position: [0.5, 0.7, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
+        { scale: [0.007, 0.007, 0.007], position: [0.5, 0.9, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
         { scale: [0.006, 0.006, 0.006], position: [-1.2, -0.5, 1], float: { speed: 2, intensity: 1, range: [0, 0] } },
         { scale: [0.007, 0.007, 0.007], position: [0.7, -1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 1, intensity: 2, range: [0, 0.1] } },
         { scale: [0.005, 0.005, 0.005], position: [0, 0, 1], float: { speed: 1, intensity: 1, range: [0, 0] } },
@@ -10,7 +10,7 @@ export const useCubeConfigs = () => {
   
     if (window.innerWidth < 1920) {
       baseConfigs = [
-        { scale: [0.007, 0.007, 0.007], position: [0.5, 0.7, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
+        { scale: [0.007, 0.007, 0.007], position: [0.5, 0.9, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 2, intensity: 0.2, range: [0, 0] } },
         { scale: [0.006, 0.006, 0.006], position: [-1.2, -0.5, 1], float: { speed: 2, intensity: 1, range: [0, 0] } },
         { scale: [0.007, 0.007, 0.007], position: [0.7, -1, 1], rotation: [0.4, 4.3, 1.02], float: { speed: 1, intensity: 2, range: [0, 0.1] } },
       ];
