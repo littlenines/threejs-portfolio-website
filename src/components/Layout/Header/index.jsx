@@ -1,4 +1,5 @@
 import { memo, useState, useRef, useEffect, useCallback } from 'react';
+import { motion } from 'motion/react';
 import Burger from './Burger';
 import useViewport from '../../../utils/useViewport';
 import styles from './Header.module.scss';
@@ -100,15 +101,19 @@ function Header() {
 
   return (
     <header className={`${styles.header} ${active ? styles.active : ''}`.trim()}>
-      <div ref={menuRef}
-           onMouseDown={dragMouseDown}
-           onTouchStart={dragMouseDown}
-           style={{
-             position: 'absolute',
-             left: `${position.x}px`,
-             top: `${position.y}px`,
-             zIndex: 2,
-           }}
+      <motion.div ref={menuRef}
+                  onMouseDown={dragMouseDown}
+                  onTouchStart={dragMouseDown}
+                  style={{
+                    position: 'absolute',
+                    left: `${position.x}px`,
+                    top: `${position.y}px`,
+                    zIndex: 2,
+                  }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
       >
         <svg className={styles.text_circle}
              xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +137,7 @@ function Header() {
                 isDragging={isDragging}
                 burgerClass={styles.menu}
         />
-      </div>
+      </motion.div>
       <nav className={styles.nav}></nav>
     </header>
   );

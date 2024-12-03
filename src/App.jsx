@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
 import { useProgress } from "@react-three/drei";
+import { motion } from "motion/react";
 import Section from "./components/Section";
 import Header from './components/Layout/Header'
 import LiquidCircle from "./components/LiquidCircle";
@@ -22,37 +23,55 @@ import "./App.scss";
 function App() {
   const [isAppReady, setAppReady] = useState(false);
   const { progress } = useProgress();
-  
+
   useEffect(() => {
     if (progress === 100) setAppReady(true);
   }, [progress]);
 
-  if (!isAppReady) return <Loader aria-live="polite"/>;
+  if (!isAppReady) return <Loader aria-live="polite" />;
 
   return (
     <>
       <Header />
       <Section className="container--hero">
-        <div className="hero">
+        <motion.div className="hero"
+                    initial={{ opacity: 0, translateY: '125px' }}
+                    whileInView={{ opacity: 1, translateY: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}>
           <div className="hero_info">
             <HeroInfo title='Hey! My name is Nemanja.'
                       typewrite='FRONTEND DEVELOPER'
                       description='I&apos;m from Serbia, currently based in Niš. With over 3 years of experience, focused on writing clean, efficient code to bring web projects to life. I’m passionate about developing interactive and responsive user interfaces and always up for tackling new challenges in frontend development.' />
-
             <div className="hero_info_buttons">
-              <Link to='https://github.com/littlenines' rel="noopener noreferrer" target="_blank">
-                <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon--medium" />} aria-label='github' />
-              </Link>
-              <Link to='https://www.linkedin.com/in/galbinovic584/' rel="noopener noreferrer" target="_blank">
-                <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon--medium" />} aria-label='linkedin' />
-              </Link>
-              <Link to='/cv/nemanja-galbinovic-cv.pdf' target="_blank" rel="noopener noreferrer" download>
-                <GooeyButton isGradientBorder title="Download CV" />
-              </Link>
+              <motion.div initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.7, ease: "linear" }}>
+                <Link to='https://github.com/littlenines' rel="noopener noreferrer" target="_blank">
+                  <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon--medium" />} aria-label='github' />
+                </Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.9, ease: "linear" }}>
+                <Link to='https://www.linkedin.com/in/galbinovic584/' rel="noopener noreferrer" target="_blank">
+                  <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon--medium" />} aria-label='linkedin' />
+                </Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 1.1, ease: "linear" }}>
+                <Link to='/cv/nemanja-galbinovic-cv.pdf' target="_blank" rel="noopener noreferrer" download>
+                  <GooeyButton isGradientBorder title="Download CV" />
+                </Link>
+              </motion.div>
             </div>
           </div>
           <LiquidCircle />
-        </div>
+        </motion.div>
       </Section>
 
       {/* Cubes */}
@@ -63,13 +82,17 @@ function App() {
         <div className="projects_card">
           {projects.map(({ image, imageAlt, title, subtitle }, index) => {
             return (
-              <LabItem key={index}
-                       image={image}
-                       imageAlt={imageAlt}
-                       title={title}
-                       subtitle={subtitle}
-                       className='projects_card_item'
-              />
+              <motion.section key={index}
+                              className='projects_card_item'
+                              initial={{ opacity: 0, translateY: '150px' }}
+                              whileInView={{ opacity: 1, translateY: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5, ease: "easeIn" }}>
+                <LabItem image={image}
+                         imageAlt={imageAlt}
+                         title={title}
+                         subtitle={subtitle}/>
+              </motion.section>
             );
           })}
         </div>
@@ -78,7 +101,16 @@ function App() {
       {/* Skills */}
       <Section title='Technologies I&apos;ve Been Working With' className="container--medium">
         <div className="skills_wrap">
-          {skills?.map(({ id, image, alt, text }) => <MemoCard key={id} image={image} alt={alt} text={text} />)}
+          {skills?.map(({ id, image, alt, text }) => {
+            return (
+              <motion.section key={id}
+                              initial={{ opacity: 0, translateY: '50px' }}
+                              whileInView={{ opacity: 1, translateY: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5, delay: id * 0.04, ease: "easeIn" }}>
+                <MemoCard image={image} alt={alt} text={text} />
+              </motion.section>)
+          })}
         </div>
       </Section>
 
