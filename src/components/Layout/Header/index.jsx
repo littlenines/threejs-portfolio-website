@@ -1,103 +1,44 @@
-import { memo, useState, useRef, useEffect, useCallback } from 'react';
-import { motion } from 'motion/react';
+import { memo, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Burger from './Burger';
-import useViewport from '../../../utils/useViewport';
+import useScrollIntoView from '../../../hooks/useScrollIntoView';
+import useDraggable from '../../../hooks/useDraggable';
+import { navigationItems } from '../../../mocks/mock';
+import useViewport from '../../../hooks/useViewport';
 import styles from './Header.module.scss';
 
 function Header() {
   const [active, setActive] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const menuRef = useRef(null);
-  const { viewportWidth, viewportHeight } = useViewport();
+  const { viewportWidth } = useViewport();
 
-  const pos1 = useRef(0);
-  const pos2 = useRef(0);
-  const pos3 = useRef(0);
-  const pos4 = useRef(0);
+  const positionX = viewportWidth > 425 && viewportWidth < 1200 ? viewportWidth - 80 : viewportWidth >= 1200 ? viewportWidth - 105 : viewportWidth - 70;
+  const positionY = 0;
 
-  const [position, setPosition] = useState({
-    x: viewportWidth > 425 ? viewportWidth - 105 : viewportWidth - 70,
-    y: 0,
-  });
+  const {position, dragMouseDown, isDragging, menuRef} = useDraggable({positionX, positionY });
+  const scrollTo = useScrollIntoView();
 
-  // Update position when viewportWidth changes
-  useEffect(() => {
-    if (viewportWidth > 0) {
-      setPosition({
-        x: viewportWidth > 425 ? viewportWidth - 105 : viewportWidth - 70,
-        y: 0,
-      });
-    }
-  }, [viewportWidth]);
-
-  const getClientX = (e) => (e.touches ? e.touches[0].clientX : e.clientX);
-  const getClientY = (e) => (e.touches ? e.touches[0].clientY : e.clientY);
-
-  const dragMouseDown = (e) => {
-    
-    pos3.current = getClientX(e);
-    pos4.current = getClientY(e);
-    
-    setIsDragging(false);
-    
-    if (e.type === 'touchstart') {
-      e.preventDefault();
-      document.addEventListener('touchmove', elementDrag, { passive: false });
-      document.addEventListener('touchend', closeDragElement,  { passive: false });
-    } else {
-      document.addEventListener('mousemove', elementDrag,  { passive: false });
-      document.addEventListener('mouseup', closeDragElement,  { passive: false });
-    }
+  const listVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+    hidden: {
+      transition: {
+        staggerDirection: -1,
+      },
+    },
   };
 
-  const elementDrag = useCallback((e) => {
-    e.preventDefault();
-    const deltaX = getClientX(e) - pos3.current;
-    const deltaY = getClientY(e) - pos4.current;
-    const distanceMoved = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
 
-    if (distanceMoved > 5) {
-      setIsDragging(true);
-    }
-
-    pos1.current = pos3.current - getClientX(e);
-    pos2.current = pos4.current - getClientY(e);
-    pos3.current = getClientX(e);
-    pos4.current = getClientY(e);
-
-    setPosition((prevPos) => {
-      if (!menuRef.current) return prevPos;
-
-      let newX = prevPos.x - pos1.current;
-      let newY = prevPos.y - pos2.current;
-
-      const headerWidth = menuRef.current.offsetWidth;
-      const headerHeight = menuRef.current.offsetHeight;
-
-      newX = Math.max(0, Math.min(newX, viewportWidth - headerWidth));
-      newY = Math.max(0, Math.min(newY, viewportHeight - headerHeight));
-
-      return { x: newX, y: newY };
-    });
-  }, [viewportWidth, viewportHeight]);
-
-  const closeDragElement = useCallback(() => {
-    document.removeEventListener('mousemove', elementDrag, { passive: false });
-    document.removeEventListener('mouseup', closeDragElement, { passive: false });
-    document.removeEventListener('touchmove', elementDrag, { passive: false });
-    document.removeEventListener('touchend', closeDragElement, { passive: false });
-
-    setTimeout(() => setIsDragging(false), 100);
-  }, [elementDrag]);
-
-  useEffect(() => {
-    return () => {
-      document.removeEventListener('mousemove', elementDrag);
-      document.removeEventListener('mouseup', closeDragElement);
-      document.removeEventListener('touchmove', elementDrag);
-      document.removeEventListener('touchend', closeDragElement);
-    };
-  }, [elementDrag, closeDragElement]);
+  const handleTabClick = (id) => {
+    setActive(false);
+    scrollTo(id);
+  };
 
   return (
     <header className={`${styles.header} ${active ? styles.active : ''}`.trim()}>
@@ -138,7 +79,22 @@ function Header() {
                 burgerClass={styles.menu}
         />
       </motion.div>
-      <nav className={styles.nav}></nav>
+      <nav className={styles.nav}>
+        <AnimatePresence>
+          {active && (
+            <motion.ul className={styles.nav_tabs}
+                       initial="hidden"
+                       animate="visible"
+                       exit="hidden"
+                       variants={listVariants}
+            >
+              {navigationItems.map(({title, link}, index) => (
+                <motion.li key={index} variants={itemVariants} onClick={() => handleTabClick(link)}>{title}</motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   );
 }

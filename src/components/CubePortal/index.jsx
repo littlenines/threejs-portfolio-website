@@ -2,8 +2,8 @@ import { memo, useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Instances, Instance, Preload, Float, useGLTF, BakeShadows } from '@react-three/drei';
 import PortalCubeGLTF from '../../assets/3D/portal_cube.glb'
-import { useCubeConfigs } from "../../utils/useCubeConfigs";
-import useIsMobile from "../../utils/useIsMobile";
+import { useCubeConfigs } from "../../hooks/useCubeConfigs";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const ModelCube = memo(() => {
   const { nodes, materials } = useGLTF(PortalCubeGLTF, true);

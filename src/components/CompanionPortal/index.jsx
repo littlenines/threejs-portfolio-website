@@ -3,7 +3,7 @@ import { Canvas, useFrame} from "@react-three/fiber";
 import { Preload, useGLTF, BakeShadows } from '@react-three/drei';
 const CompanionPortalModel = lazy(() => import("../../models/companionPortal"));
 import PortalCompanionCubeGLTF from '../../assets/3D/cube_companion.glb'
-import useIsMobile from "../../utils/useIsMobile";
+import useIsMobile from "../../hooks/useIsMobile";
 import style from './Companion.module.scss'
 
 const companionProps = {

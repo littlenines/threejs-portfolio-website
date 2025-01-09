@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <Header />
-      <Section className="container--hero">
+      <Section className="container--hero" id='about'>
         <motion.div className="hero"
                     initial={{ opacity: 0, translateY: '125px' }}
                     whileInView={{ opacity: 1, translateY: 0 }}
@@ -78,7 +78,7 @@ function App() {
       <CubePortal />
 
       {/* Personal Projects */}
-      <Section title='Personal Projects'>
+      <Section title='Personal Projects' id='projects'>
         <div className="projects_card">
           {projects.map(({ image, imageAlt, title, subtitle }, index) => {
             return (
@@ -99,7 +99,7 @@ function App() {
       </Section>
 
       {/* Skills */}
-      <Section title='Technologies I&apos;ve Been Working With' className="container--medium">
+      <Section title='Technologies I&apos;ve Been Working With' className="container--medium" id='technology'>
         <div className="skills_wrap">
           {skills?.map(({ id, image, alt, text }) => {
             return (
@@ -115,7 +115,7 @@ function App() {
       </Section>
 
       {/* Contact */}
-      <Section title='Want to work with me?'>
+      <Section title='Want to work with me?' id='contact'>
         <ContactMe title='Send me a message' mail='galbinovic584@gmail.com' />
       </Section>
     </>

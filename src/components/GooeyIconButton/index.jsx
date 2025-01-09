@@ -15,21 +15,13 @@ const GooeyIconButton = ({ icon, buttonClassName = '', gooeyClassName='', isGrad
                 </defs>
             </svg>
             <div className={styles.gooey}>
-                <div className={isGradientBorder ? styles.gooey_border : ''}>
-
-                <button className={`${isGradientBorder ? styles.gooey_button_outlined : styles.gooey_button} ${buttonClassName}`.trim()} {...props}>{icon}</button>
-                <span className={styles.bubbles}>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                    <span className={`${styles.bubble} ${gooeyClassName}`}></span>
-                </span>
+                <div className={isGradientBorder ? styles.gooey_border : undefined}>
+                    <button className={`${isGradientBorder ? styles.gooey_button_outlined : styles.gooey_button} ${buttonClassName}`.trim()} {...props}>{icon}</button>
+                    <span className={styles.bubbles}>
+                        {Array.from({ length: 10 }).map((_, index) => (
+                            <span key={index} className={`${styles.bubble} ${gooeyClassName}`} />
+                        ))}
+                    </span>
                 </div>
             </div>
         </>
