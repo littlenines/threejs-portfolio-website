@@ -30,11 +30,11 @@ li {
     left: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
+    visibility: hidden;
+    clip-path: circle(30px);
     background: rgba(0, 0, 0, 0.8);
     transition: clip-path 400ms ease-in-out, visibility 400ms ease-in-out;
-    z-index: 1;
-    clip-path: circle(30px);
-    visibility: hidden;
   }
 }
 
@@ -42,12 +42,12 @@ li {
   position: fixed;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   line-height: 2;
-  font-size: $font-md;
+  font-size: $font-lg;
   width: max-content;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   font-weight: 500;
   padding: 0;
   color: $color-light-dim;
@@ -78,11 +78,6 @@ li {
     visibility: visible;
     clip-path: circle(100%);
   }
-}
-
-.logo {
-  font-size: 6.4rem;
-  font-weight: bolder;
 }
 
 .menu {

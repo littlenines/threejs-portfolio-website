@@ -1,10 +1,11 @@
-import { memo, useState } from 'react';
+import { memo, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Burger from './Burger';
 import useScrollIntoView from '../../../hooks/useScrollIntoView';
 import useDraggable from '../../../hooks/useDraggable';
 import { navigationItems } from '../../../mocks/mock';
 import useViewport from '../../../hooks/useViewport';
+import shouldScroll from '../../../utils/shouldScroll';
 import styles from './Header.module.scss';
 
 function Header() {
@@ -35,10 +36,11 @@ function Header() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
 
-  const handleTabClick = (id) => {
+  const handleTabClick = useCallback((id) => {
+    shouldScroll(true);
     setActive(false);
     scrollTo(id);
-  };
+  }, [scrollTo]);
 
   return (
     <header className={`${styles.header} ${active ? styles.active : ''}`.trim()}>

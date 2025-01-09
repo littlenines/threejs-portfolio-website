@@ -1,15 +1,17 @@
-import { memo, useState } from "react";
+import { memo, useState, useCallback } from "react";
 import PropTypes from 'prop-types';
+import shouldScroll from "../../../../utils/shouldScroll";
 import styles from './Burger.module.scss'
 
 const Burger = ({active, setActive, isDragging = false, burgerClass = ''}) => {
     const [isActive, setIsActive] = useState(false);
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         if (isDragging) return;
         setIsActive(!isActive);
         setActive(!active)
-    };
+        shouldScroll(active)
+    }, [active, isActive, isDragging, setActive]);
 
     return (
         <div className={`${styles.burger} ${burgerClass}`.trim()} onClick={handleClick}>

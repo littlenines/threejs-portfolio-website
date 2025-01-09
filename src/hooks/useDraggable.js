@@ -36,7 +36,6 @@ const useDraggable = ({positionX, positionY}) => {
       setIsDragging(false);
       
       if (e.type === 'touchstart') {
-        e.preventDefault();
         document.addEventListener('touchmove', elementDrag, { passive: false });
         document.addEventListener('touchend', closeDragElement,  { passive: false });
       } else {
