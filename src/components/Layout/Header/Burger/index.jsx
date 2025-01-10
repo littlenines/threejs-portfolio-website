@@ -1,22 +1,20 @@
-import { memo, useState, useCallback } from "react";
+import { memo, useCallback } from "react";
 import PropTypes from 'prop-types';
 import shouldScroll from "../../../../utils/shouldScroll";
 import styles from './Burger.module.scss'
 
 const Burger = ({active, setActive, isDragging = false, burgerClass = ''}) => {
-    const [isActive, setIsActive] = useState(false);
 
     const handleClick = useCallback(() => {
         if (isDragging) return;
-        setIsActive(!isActive);
         setActive(!active)
         shouldScroll(active)
-    }, [active, isActive, isDragging, setActive]);
+    }, [active, isDragging, setActive]);
 
     return (
         <div className={`${styles.burger} ${burgerClass}`.trim()} onClick={handleClick}>
             <svg
-                className={`${styles.ham} ${styles.hamRotate} ${styles.ham1}  ${isActive ? styles.active : ''}`.trim() || undefined}
+                className={`${styles.ham} ${styles.hamRotate} ${styles.ham1}  ${active ? styles.active : ''}`.trim() || undefined}
                 viewBox="0 0 100 100"
             >
                 <path
