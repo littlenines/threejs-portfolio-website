@@ -115,14 +115,8 @@
     },
     {
         "id": 19,
-        "image": "/skills/jira.svg",
-        "text": "Jira",
-        "alt": "jira"
-    },
-    {
-        "id": 20,
-        "image": "/skills/trello.svg",
-        "text": "Trello",
-        "alt": "trello"
+        "image": "/skills/motion.svg",
+        "text": "Motion",
+        "alt": "motion"
     }
 ]

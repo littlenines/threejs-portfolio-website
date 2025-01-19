@@ -1,0 +1,50 @@
+@use "../../styles/variables" as *;
+
+.project,
+.project_title,
+.project_description,
+.project_images {
+  margin-bottom: $margin-xl;
+}
+
+.project_text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.project_title {
+  font-size: $font-2lg;
+}
+
+.project_description {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-size: $font-2sm;
+  line-height: 1.5;
+}
+
+.project_images {
+  display: grid;
+  gap: 20px;
+}
+
+.project_back_link {
+  text-align: center;
+  font-size: $font-2sm;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .project_title {
+    font-size: $font-xl;
+  }
+
+  .project_description,
+  .project_back_link {
+    font-size: $font-md;
+  }
+}

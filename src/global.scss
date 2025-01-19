@@ -17,6 +17,7 @@
 
 .container--hero,
 .container--default,
+.container--small,
 .container--medium {
   padding-left: 20px;
   padding-right: 20px;
@@ -28,6 +29,10 @@
 
 .container--medium {
   max-width: 1400px;
+}
+
+.container--small {
+  max-width: 1200px;
 }
 
 text {
@@ -55,6 +60,11 @@ text {
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .container--small {
+    padding-left: unset;
+    padding-right: unset;
   }
 
   .canvas_cube,

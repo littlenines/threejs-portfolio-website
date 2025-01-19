@@ -3,18 +3,21 @@
         "image": "/projects/mac_portfolio.webp",
         "imageAlt": "portfolio",
         "title": "Portfolio",
-        "subtitle": "React, Three.js"
+        "subtitle": "React, Three.js",
+        "slug": "portfolio"
     },
     {
         "image": "/projects/mac3_project.webp",
         "imageAlt": "Japan",
         "title": "Sketchfab Model View",
-        "subtitle": "React, Three.js"
+        "subtitle": "React, Three.js",
+        "slug": "sketchfab"
     },
     {
         "image": "/projects/mac2_travel.webp",
         "imageAlt": "test",
         "title": "Travel Clone",
-        "subtitle": "React, TypeScript"
+        "subtitle": "React, TypeScript",
+        "slug": "clone"
     }
 ]

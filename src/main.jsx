@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from './App.jsx'
+import Project from './pages/Project/index.jsx';
 import './reset.scss'
 import './global.scss'
 
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/:slug",
+    element: <Project />,
   },
 ]);
 

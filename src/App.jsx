@@ -80,9 +80,9 @@ function App() {
       {/* Personal Projects */}
       <Section title='Personal Projects' id='projects'>
         <div className="projects_card">
-          {projects.map(({ image, imageAlt, title, subtitle }, index) => {
+          {projects.map(({ image, imageAlt, title, subtitle, slug }) => {
             return (
-              <motion.section key={index}
+              <motion.section key={slug}
                               className='projects_card_item'
                               initial={{ opacity: 0, translateY: '150px' }}
                               whileInView={{ opacity: 1, translateY: 0 }}
@@ -91,7 +91,8 @@ function App() {
                 <LabItem image={image}
                          imageAlt={imageAlt}
                          title={title}
-                         subtitle={subtitle}/>
+                         subtitle={subtitle}
+                         link={slug}/>
               </motion.section>
             );
           })}

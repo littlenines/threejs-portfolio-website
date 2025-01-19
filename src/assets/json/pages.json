@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "portfolio",
+    "title": "Portfolio v3",
+    "description": [
+      "I'm excited to share this project with you because it represents my passion for web development and all the learning that comes with it. This portfolio is a blend of creativity and countless hours of experimentation.",
+      "The most challenging part of creating this portfolio was designing it (Huge respect for the designers, it ain't easy). Besides designing it, the next challenge was optimizing the Three.js models. The optimization was especially challenging due to the need to balance performance across mobile, tablet, and desktop versions. While finishing my portfolio v3 (the current version you're seeing), I came up with an even better idea that I plan to implement in the near future.",
+      "I built this portfolio using React and Three.js, incorporating Drei and R3F to bring some cool 3D elements to life. I also used Motion for smooth transitions. Keeping my code up-to-date and secure was a priority, so I used Dependabot to manage package updates.",
+      "For styling, I went with a mobile-first approach using SCSS. To ensure it's clean, modern, and looks great on any device, I tested it across different devices using Responsively App. I've put a lot of thought into each detail, hoping to create an experience that's as enjoyable to navigate as it was for me to build.",
+      "So, why did I create this portfolio? I wanted a place to showcase my projects, of course, but more than that, I wanted to create a space that reflects who I am as a developer. Each project you see here is a piece of my journey, a testament to the challenges I've overcome and the skills I've gained along the way.",
+      "Thank you for visiting, and I hope you enjoy exploring my work. It means a lot to me to share this with you, and I'm excited for what the future holds."
+    ],
+    "images": [
+      {
+        "src": "/page/portfolio/mobile_portfolio.gif",
+        "alt": "mobile presentation"
+      },
+      {
+        "src": "/page/portfolio/macbook_portfolio.gif",
+        "alt": "tablet presentation"
+      },
+      {
+        "src": "/page/portfolio/portfolio_hero.webp",
+        "alt": "desktop"
+      }
+    ]
+  },
+  {
+    "slug": "sketchfab",
+    "title": "Sketchfab Model View",
+    "description": ["In progress..."],
+    "images": []
+  },
+  {
+    "slug": "clone",
+    "title": "Cloned projects",
+    "description": ["In progress..."],
+    "images": []
+  }
+]
