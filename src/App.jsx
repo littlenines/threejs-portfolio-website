@@ -25,7 +25,7 @@ function App() {
   const { progress } = useProgress();
 
   useEffect(() => {
-    if (progress === 100) setAppReady(true);
+    if (progress === 100) setTimeout(() => setAppReady(true), 200);
   }, [progress]);
 
   if (!isAppReady) return <Loader aria-live="polite" />;
@@ -35,8 +35,8 @@ function App() {
       <Header />
       <Section className="container--hero" id='about'>
         <motion.div className="hero"
-                    initial={{ opacity: 0, translateY: '125px' }}
-                    whileInView={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, transform: 'translate3d(0, 125px, 0)' }}
+                    whileInView={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}>
           <div className="hero_info">
