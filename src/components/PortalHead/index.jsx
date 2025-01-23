@@ -31,7 +31,7 @@ const Model = memo(({inView}) => {
 
   return (
     <Suspense fallback={null}>
-      <WheatleyPortalModel nodes={nodes} materials={materials} modelRef={group} {...headProps} />
+      <WheatleyPortalModel nodes={nodes} materials={materials} ref={group} {...headProps} />
       <Preload all />
       <BakeShadows />
     </Suspense>

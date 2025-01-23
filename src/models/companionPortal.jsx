@@ -1,11 +1,11 @@
-import { memo } from 'react'
+import { memo, forwardRef } from 'react'
 
-const CompanionPortal = ({companionRef, nodes, materials, ...props}) => {
+const CompanionPortal = forwardRef(({nodes, materials, ...props}, ref) => {
   return (
-    <group ref={companionRef} {...props} dispose={null}>
+    <group ref={ref} {...props} dispose={null}>
       <mesh geometry={nodes.defaultMaterial.geometry} material={materials.DefaultMaterial}/>
     </group>
   )
-}
+})
 
 export default memo(CompanionPortal);

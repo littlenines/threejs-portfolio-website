@@ -24,7 +24,7 @@ const ModelCompanionCube = memo(() => {
     return (
         <>
             <Suspense fallback={null}>
-                <CompanionPortalModel companionRef={companionRef}
+                <CompanionPortalModel ref={companionRef}
                                       nodes={memoizedNodes}
                                       materials={memoizedMaterials}
                                       {...companionProps}

@@ -1,10 +1,10 @@
-import React, {memo, useMemo} from 'react'
+import React, {forwardRef, memo, useMemo} from 'react'
 
-const WheatleyPortal = memo(({ nodes, materials, modelRef, ...props }) => {
+const WheatleyPortal = forwardRef(({ nodes, materials, ...props }, ref) => {
   const staticRootJoint = useMemo(() => <primitive object={nodes._rootJoint} />, [nodes._rootJoint]);
 
   return (
-    <group ref={modelRef} {...props} dispose={null}>
+    <group ref={ref} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.03221844}>
           <group name="b27408aa988a4a629927c64cfc7579a7fbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
