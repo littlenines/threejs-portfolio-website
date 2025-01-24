@@ -1,9 +1,9 @@
 import { memo, Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber"
-import { Preload, OrbitControls } from '@react-three/drei';
+import { useGLTF, useAnimations, BakeShadows, Preload, OrbitControls } from '@react-three/drei';
 import WheatleyPortalModel from "../../models/wheatleyPortal"
-import { useGLTF, useAnimations, BakeShadows } from '@react-three/drei'
 import { useInView } from "motion/react";
+import { useMouseGrab } from "../../hooks/useMouseGrab";
 import WheatleyGLTF from '../../assets/3D/portal.glb'
 
 useGLTF.preload(WheatleyGLTF, true, true);
@@ -41,8 +41,10 @@ const Model = memo(({inView}) => {
 const PortalHead = () => {
   const canvasRef = useRef();
   const isInView = useInView(canvasRef)
+  const mouseGrabEvent = useMouseGrab();
+
   return (
-    <Canvas ref={canvasRef} dpr={[0.7, 0.9]} camera={{ near: 0.1, far: 10 }} gl={{ powerPreference: "low-power" }} className="head_canvas">
+    <Canvas onMouseDown={mouseGrabEvent} onMouseUp={mouseGrabEvent} ref={canvasRef} dpr={[0.7, 0.9]} camera={{ near: 0.1, far: 10 }} gl={{ powerPreference: "low-power" }} className="head_canvas">
       <ambientLight intensity={0.2} />
       <directionalLight position={[5, 10, 5]} intensity={0.8} />
       <pointLight position={[-0.25, 0, 4.1]}
