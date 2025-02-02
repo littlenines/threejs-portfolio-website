@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import App from './App.jsx'
 import Project from './pages/Project/index.jsx';
-import NotFound from './pages/NotFound/index.jsx';
+import NotFound from './pages/404.jsx';
 import './reset.scss'
 import './global.scss'
 
