@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import GooeyButton from '../../components/GooeyButton';
-import styles from './NotFound.module.scss';
+import GooeyButton from '../components/GooeyButton';
+import styles from './NotFound/NotFound.module.scss';
 
 const NotFound = () => {
   return (
