@@ -1,9 +1,9 @@
 import { lazy, useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
 import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import Section from "./components/Section";
 import Header from './components/Layout/Header'
 import LiquidCircle from "./components/LiquidCircle";
@@ -25,7 +25,10 @@ function App() {
   const { progress } = useProgress();
 
   useEffect(() => {
-    if (progress === 100) setTimeout(() => setAppReady(true), 200);
+    if (progress !== 100) return;
+    const appReadyTimeout = setTimeout(() => setAppReady(true), 200);
+    
+    return () => clearTimeout(appReadyTimeout)
   }, [progress]);
 
   if (!isAppReady) return <Loader aria-live="polite" />;

@@ -1,7 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
-import Loader from "../../components/Loader";
 import pages from "../../assets/json/pages.json";
 import styles from "./Project.module.scss";
 
@@ -9,7 +8,9 @@ const Project = () => {
   const { slug } = useParams();
   const getPage = pages.find((page) => page.slug === slug) ?? null;
 
-  if (!getPage) return <Loader showProgress={false} />;
+  if (!getPage) {
+    return <Navigate to="/not-found" replace />;
+  }
 
   return (
     <>

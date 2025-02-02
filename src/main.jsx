@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import App from './App.jsx'
 import Project from './pages/Project/index.jsx';
+import NotFound from './pages/NotFound/index.jsx';
 import './reset.scss'
 import './global.scss'
 
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
   {
     path: "/:slug",
     element: <Project />,
+  },
+  {
+    path: "/not-found",
+    element: <NotFound />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
