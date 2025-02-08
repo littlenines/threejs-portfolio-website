@@ -36,11 +36,11 @@ const useDraggable = ({positionX, positionY}) => {
       setIsDragging(false);
       
       if (e.type === 'touchstart') {
-        document.addEventListener('touchmove', elementDrag, { passive: false });
-        document.addEventListener('touchend', closeDragElement,  { passive: false });
+        document.addEventListener('touchmove', elementDrag);
+        document.addEventListener('touchend', closeDragElement);
       } else {
-        document.addEventListener('mousemove', elementDrag,  { passive: false });
-        document.addEventListener('mouseup', closeDragElement,  { passive: false });
+        document.addEventListener('mousemove', elementDrag);
+        document.addEventListener('mouseup', closeDragElement);
       }
     };
   
@@ -76,10 +76,10 @@ const useDraggable = ({positionX, positionY}) => {
     }, [viewportWidth, viewportHeight]);
   
     const closeDragElement = useCallback(() => {
-      document.removeEventListener('mousemove', elementDrag, { passive: false });
-      document.removeEventListener('mouseup', closeDragElement, { passive: false });
-      document.removeEventListener('touchmove', elementDrag, { passive: false });
-      document.removeEventListener('touchend', closeDragElement, { passive: false });
+      document.removeEventListener('mousemove', elementDrag);
+      document.removeEventListener('mouseup', closeDragElement);
+      document.removeEventListener('touchmove', elementDrag);
+      document.removeEventListener('touchend', closeDragElement);
   
       setTimeout(() => setIsDragging(false), 100);
     }, [elementDrag]);
