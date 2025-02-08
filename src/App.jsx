@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import Section from "./components/Section";
-// import Header from './components/Layout/Header'
+import Header from './components/Layout/Header'
 import LiquidCircle from "./components/LiquidCircle";
 import GooeyButton from "./components/GooeyButton";
 import GooeyIconButton from "./components/GooeyIconButton";
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Section className="container--hero" id='about'>
         <motion.div className="hero"
                     initial={{ opacity: 0, transform: 'translate3d(0, 125px, 0)' }}
