@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     if (progress !== 100) return;
-    const appReadyTimeout = setTimeout(() => setAppReady(true), 0);
+    const appReadyTimeout = setTimeout(() => setAppReady(true), 100);
     
     return () => clearTimeout(appReadyTimeout)
   }, [progress]);
