@@ -1,6 +1,6 @@
-import {memo} from 'react'
+import {memo, lazy} from 'react'
 import PropTypes from 'prop-types';
-import PortalHead from '../PortalHead/index'
+const PortalHead = lazy(() => import('../PortalHead/index'));
 import styles from './LiquidCircle.module.scss'
 
 const LiquidCircle = ({liquidClass = ''}) => {

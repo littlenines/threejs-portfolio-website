@@ -1,16 +1,13 @@
 import { lazy, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useProgress } from "@react-three/drei";
+import { useProgress, useGLTF } from "@react-three/drei";
 import { motion } from "motion/react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import Section from "./components/Section";
+import WheatleyGLTF from './assets/3D/portal.glb';
+const Section = lazy(() => import("./components/Section"));
 const Header = lazy(() => import("./components/Layout/Header"));
-import LiquidCircle from "./components/LiquidCircle";
+const LiquidCircle = lazy(() => import("./components/LiquidCircle"));
 const HeroInfo = lazy(() => import("./components/HeroInfo"));
-import Loader from "./components/Loader";
-const GooeyButton = lazy(() => import("./components/GooeyButton"));
-const GooeyIconButton = lazy(() => import("./components/GooeyIconButton"));
+const HeroButtons = lazy(() => import("./components/HeroButtons"));
+const Loader = lazy(() => import("./components/Loader"));
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
@@ -21,12 +18,14 @@ import skills from './assets/json/skills.json'
 import "./App.scss";
 
 function App() {
+  useGLTF.preload(WheatleyGLTF, true, true);
+
   const [isAppReady, setAppReady] = useState(false);
   const { progress } = useProgress();
 
   useEffect(() => {
     if (progress !== 100) return;
-    const appReadyTimeout = setTimeout(() => setAppReady(true), 200);
+    const appReadyTimeout = setTimeout(() => setAppReady(true), 250);
     
     return () => clearTimeout(appReadyTimeout)
   }, [progress]);
@@ -47,30 +46,9 @@ function App() {
                       typewrite='FRONTEND DEVELOPER'
                       description='I&apos;m from Serbia, currently based in Niš. With over 3 years of experience, focused on writing clean, efficient code to bring web projects to life. I’m passionate about developing interactive and responsive user interfaces and always up for tackling new challenges in frontend development.' />
             <div className="hero_info_buttons">
-              <motion.div initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.7, ease: "linear" }}>
-                <Link to='https://github.com/littlenines' rel="noopener noreferrer" target="_blank">
-                  <GooeyIconButton icon={<FontAwesomeIcon icon={faGithub} className="icon--medium" />} aria-label='github' />
-                </Link>
-              </motion.div>
-              <motion.div initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.9, ease: "linear" }}>
-                <Link to='https://www.linkedin.com/in/galbinovic584/' rel="noopener noreferrer" target="_blank">
-                  <GooeyIconButton icon={<FontAwesomeIcon icon={faLinkedinIn} className="icon--medium" />} aria-label='linkedin' />
-                </Link>
-              </motion.div>
-              <motion.div initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 1.1, ease: "linear" }}>
-                <Link to='/cv/nemanja-galbinovic-cv.pdf' target="_blank" rel="noopener noreferrer" download>
-                  <GooeyButton isGradientBorder title="Download CV" />
-                </Link>
-              </motion.div>
+              <HeroButtons github='https://github.com/littlenines' 
+                           linkedin='https://www.linkedin.com/in/galbinovic584/'
+                           cv='/cv/nemanja-galbinovic-cv.pdf' />
             </div>
           </div>
           <LiquidCircle />

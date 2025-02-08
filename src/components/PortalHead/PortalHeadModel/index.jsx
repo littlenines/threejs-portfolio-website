@@ -4,8 +4,6 @@ import { useGLTF, useAnimations, BakeShadows, Preload } from '@react-three/drei'
 import WheatleyPortalModel from "../../../models/wheatleyPortal"
 import WheatleyGLTF from '../../../assets/3D/portal.glb'
 
-useGLTF.preload(WheatleyGLTF, true, true);
-
 const headProps = {
   scale: [31, 31, 31],
   position: [0, 0, 3.7],
