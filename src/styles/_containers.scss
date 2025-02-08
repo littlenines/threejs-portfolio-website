@@ -1,0 +1,48 @@
+.container--hero,
+.container--default,
+.container--small,
+.container--medium {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1600px;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container--medium {
+  max-width: 1400px;
+}
+
+.container--small {
+  max-width: 1200px;
+}
+
+@media (min-width: 1024px) {
+  .container--hero {
+    height: 100vh;
+    padding-top: unset;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container--default {
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .container--small {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container--hero,
+  .container--default,
+  .container--medium {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}

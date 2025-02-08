@@ -1,0 +1,22 @@
+.head_canvas {
+  cursor: grab;
+  border-radius: 50%;
+}
+
+.canvas_cube,
+.canvas_turret {
+  z-index: -1;
+  top: 0;
+  display: none;
+}
+
+.canvas_turret {
+  top: 0;
+}
+
+@media (min-width: 1200px) {
+  .canvas_cube,
+  .canvas_turret {
+    display: block;
+  }
+}

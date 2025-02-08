@@ -23,7 +23,6 @@
   width: 100%;
 }
 
-// Projects
 .projects {
   position: relative;
 }
@@ -34,12 +33,6 @@
   gap: 16px;
 }
 
-// icons
-.icon--medium {
-  font-size: 3em;
-}
-
-// Skills
 .skills_wrap {
   display: flex;
   flex-wrap: wrap;
@@ -99,21 +92,11 @@
     flex-direction: unset;
   }
 
-  .icon--medium {
-    font-size: 3.5em;
-  }
-
   .projects_card_item:last-child {
     margin-bottom: 58px;
   }
 
   .projects_card_item {
     width: calc(50% - 60px);
-  }
-}
-
-@media (min-width: $media-desktop-standard) {
-  .icon--medium {
-    font-size: 4em;
   }
 }

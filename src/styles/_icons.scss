@@ -1,0 +1,15 @@
+.icon--medium {
+  font-size: 3em;
+}
+
+@media (min-width: 1200px) {
+  .icon--medium {
+    font-size: 3.5em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .icon--medium {
+    font-size: 4em;
+  }
+}

@@ -1,11 +1,24 @@
 @use '../../styles/variables' as *;
 
+@mixin responsive-font($tablet, $laptop, $desktop) {
+  @media (min-width: $media-tablet-big) {
+    font-size: $tablet;
+  }
+  @media (min-width: $media-laptop) {
+    font-size: $laptop;
+  }
+  @media (min-width: $media-desktop-standard) {
+    font-size: $desktop;
+  }
+}
+
 .title {
   font-size: $font-base;
   line-height: 1;
   margin-bottom: 8px;
   color: $color-light-dim;
   width: 100%;
+  @include responsive-font($font-2sm, $font-2lg, $font-xl);
 }
 
 .developer {
@@ -17,6 +30,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   width: 100%;
+  @include responsive-font($font-base, $font-2md, $font-lg);
 }
 
 .subtext {
@@ -25,32 +39,17 @@
   font-size: $font-xs;
   line-height: 32px;
   margin-bottom: $margin-sm;
-}
-
-@media (min-width: $media-tablet-big) {
-  .title {
-    font-size: $font-2sm;
-  }
-
-  .developer {
-    font-size: $font-base;
-  }
-
-  .subtext {
-    font-size: $font-sm;
-  }
+  @include responsive-font($font-sm, $font-md, $font-2md);
 }
 
 @media(min-width: $media-laptop) {
   .title {
-    font-size: $font-2lg;
     margin-bottom: 20px;
     width: unset;
   }
 
   .developer {
     text-align: unset;
-    font-size: $font-2md;
     width: unset;
     margin-bottom: $margin-sm;
   }
@@ -58,23 +57,12 @@
   .subtext {
     text-align: unset;
     line-height: 40px;
-    font-size: $font-md;
     margin-bottom: $margin-md;
   }
 }
 
 @media(min-width: $media-desktop-standard) {
-
-  .title {
-    font-size: $font-xl;
-  }
-
-  .developer {
-    font-size: $font-lg;
-  }
-
   .subtext {
-    font-size: $font-2md;
     max-width: 650px;
   }
 }
