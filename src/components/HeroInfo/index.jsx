@@ -1,6 +1,6 @@
-import { memo } from "react";
+import { memo, lazy } from "react";
 import PropTypes from 'prop-types';
-import TypewriterEffect from "../TypewriterEffect";
+const TypewriterEffect = lazy(() => import("../TypewriterEffect"));
 import styles from './HeroInfo.module.scss'
 
 const HeroInfo = ({title, description, typewrite}) => {

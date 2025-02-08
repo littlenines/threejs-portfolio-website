@@ -5,12 +5,12 @@ import { motion } from "motion/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import Section from "./components/Section";
-import Header from './components/Layout/Header'
+const Header = lazy(() => import("./components/Layout/Header"));
 import LiquidCircle from "./components/LiquidCircle";
-import GooeyButton from "./components/GooeyButton";
-import GooeyIconButton from "./components/GooeyIconButton";
-import HeroInfo from "./components/HeroInfo";
+const HeroInfo = lazy(() => import("./components/HeroInfo"));
 import Loader from "./components/Loader";
+const GooeyButton = lazy(() => import("./components/GooeyButton"));
+const GooeyIconButton = lazy(() => import("./components/GooeyIconButton"));
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
