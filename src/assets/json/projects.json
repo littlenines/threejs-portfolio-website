@@ -19,47 +19,5 @@
         "title": "Travel Clone",
         "subtitle": "React, TypeScript",
         "slug": "clone"
-    },
-    {
-        "image": "/projects/mac_portfolio.webp",
-        "imageAlt": "portfolio",
-        "title": "Portfolio",
-        "subtitle": "React, Three.js",
-        "slug": "portfolio2"
-    },
-    {
-        "image": "/projects/mac3_project.webp",
-        "imageAlt": "Japan",
-        "title": "Sketchfab Model View",
-        "subtitle": "React, Three.js",
-        "slug": "sketchfab2"
-    },
-    {
-        "image": "/projects/mac2_travel.webp",
-        "imageAlt": "test",
-        "title": "Travel Clone",
-        "subtitle": "React, TypeScript",
-        "slug": "clone2"
-    },
-    {
-        "image": "/projects/mac_portfolio.webp",
-        "imageAlt": "portfolio",
-        "title": "Portfolio",
-        "subtitle": "React, Three.js",
-        "slug": "portfolio3"
-    },
-    {
-        "image": "/projects/mac3_project.webp",
-        "imageAlt": "Japan",
-        "title": "Sketchfab Model View",
-        "subtitle": "React, Three.js",
-        "slug": "sketchfab3"
-    },
-    {
-        "image": "/projects/mac2_travel.webp",
-        "imageAlt": "test",
-        "title": "Travel Clone",
-        "subtitle": "React, TypeScript",
-        "slug": "clone3"
     }
 ]
