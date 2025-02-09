@@ -4,7 +4,7 @@ import Loader from "./components/Loader";
 const HeroInfo = lazy(() => import("./components/HeroInfo"));
 const HeroButtons = lazy(() => import("./components/HeroButtons"));
 const LiquidCircle = lazy(() => import("./components/LiquidCircle"));
-const Header = lazy(() => import("./components/Layout/Header"));
+import Header from "./components/Layout/Header";
 const Section = lazy(() => import("./components/Section"));
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
@@ -18,8 +18,8 @@ import styles from './App.module.scss';
 function App() {
   return (
     <>
-      <Header />
       <Suspense fallback={<Loader aria-live="polite" />}>
+      <Header />
         <Section className="container--hero" id='about'>
           <motion.div className={styles.hero}
                       initial={{ opacity: 0 }}

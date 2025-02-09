@@ -1,5 +1,5 @@
 
-import { memo, Suspense, useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { useGLTF, useAnimations, BakeShadows, Preload } from '@react-three/drei';
 import WheatleyPortalModel from "../../../models/wheatleyPortal"
 import WheatleyGLTF from '../../../assets/3D/portal.glb'
@@ -26,11 +26,11 @@ const PortalHeadModel = ({inView}) => {
   }, [inView]);
 
   return (
-    <Suspense fallback={null}>
+    <>
       <WheatleyPortalModel nodes={nodes} materials={materials} ref={group} {...headProps} />
       <Preload all />
       <BakeShadows />
-    </Suspense>
+    </>
   )
 };
 
