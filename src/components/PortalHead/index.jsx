@@ -7,7 +7,7 @@ import { useMouseGrab } from "../../hooks/useMouseGrab";
 
 const PortalHead = () => {
   const canvasRef = useRef();
-  const isInView = useInView(canvasRef)
+  const isInView = useInView(canvasRef, { initial: true })
   const mouseGrabEvent = useMouseGrab();
 
   return (

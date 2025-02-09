@@ -56,7 +56,7 @@ function Header() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeIn" }}
       >
         <svg className={styles.text_circle}
              xmlns="http://www.w3.org/2000/svg"
