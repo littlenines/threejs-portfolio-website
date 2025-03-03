@@ -8,7 +8,7 @@ import Header from "./components/Layout/Header";
 import Section from "./components/Section";
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
-const MemoCard = lazy(() => import("./components/MemoCard"));
+import MemoCard from "./components/MemoCard";
 const ContactMe = lazy(() => import("./components/ContactMe"));
 import projects from "./assets/json/projects.json";
 import skills from './assets/json/skills.json';
@@ -67,7 +67,7 @@ function App() {
       </Section>
 
       {/* Skills */}
-      <Section title='Technologies I&apos;ve Been Working With' className="container--medium" id='technology'>
+      <Section title="Technologies I've Been Working With" className="container--medium" id='technology'>
         <div className={styles.skills_wrap}>
           {skills?.map(({ id, image, alt, text }) => {
             return (
