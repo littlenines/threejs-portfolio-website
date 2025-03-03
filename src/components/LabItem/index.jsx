@@ -10,10 +10,10 @@ const LabItem = ({image, imageAlt, title, subtitle, link, ...props}) => {
           <img src={image} alt={imageAlt} loading='lazy' />
         </Link>
       </div>
-      {/* <div className={styles.lab_info}>
+      <div className={styles.lab_info}>
         <h3 className={styles.lab_info_title}>{title}</h3>
         <p className={styles.lab_info_subtitle}>{subtitle}</p>
-      </div> */}
+      </div>
     </div>
   );
 };
