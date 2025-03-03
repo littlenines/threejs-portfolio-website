@@ -5,7 +5,7 @@ const HeroInfo = lazy(() => import("./components/HeroInfo"));
 const HeroButtons = lazy(() => import("./components/HeroButtons"));
 const LiquidCircle = lazy(() => import("./components/LiquidCircle"));
 import Header from "./components/Layout/Header";
-const Section = lazy(() => import("./components/Section"));
+import Section from "./components/Section";
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
@@ -47,7 +47,7 @@ function App() {
       {/* Personal Projects */}
       <Section title='Personal Projects' id='projects'>
         <div className={styles.projects_card}>
-          {projects.map(({ imageMobile, imageAlt, title, subtitle, slug }) => {
+          {projects.map(({ image, imageAlt, title, subtitle, slug }) => {
             return (
               <motion.section key={slug}
                               className={styles.projects_card_item}
@@ -55,7 +55,7 @@ function App() {
                               whileInView={{ opacity: 1, translateY: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.5, ease: "easeIn" }}>
-                <LabItem image={imageMobile}
+                <LabItem image={image}
                          imageAlt={imageAlt}
                          title={title}
                          subtitle={subtitle}

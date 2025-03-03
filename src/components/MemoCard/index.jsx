@@ -1,4 +1,3 @@
-import { memo } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemoCard.module.scss";
 
@@ -18,4 +17,4 @@ MemoCard.propTypes = {
   memoClass: PropTypes.string,
 };
 
-export default memo(MemoCard);
+export default MemoCard
