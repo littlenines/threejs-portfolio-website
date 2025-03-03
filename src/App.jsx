@@ -47,7 +47,7 @@ function App() {
       {/* Personal Projects */}
       <Section title='Personal Projects' id='projects'>
         <div className={styles.projects_card}>
-          {projects.map(({ image, imageMobile, imageAlt, title, subtitle, slug }) => {
+          {projects.map(({ imageMobile, imageAlt, title, subtitle, slug }) => {
             return (
               <motion.section key={slug}
                               className={styles.projects_card_item}
@@ -55,7 +55,7 @@ function App() {
                               whileInView={{ opacity: 1, translateY: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.5, ease: "easeIn" }}>
-                <LabItem image={window?.innerWidth < 768 ? imageMobile : image}
+                <LabItem image={imageMobile}
                          imageAlt={imageAlt}
                          title={title}
                          subtitle={subtitle}
