@@ -1,20 +1,20 @@
 [
     {
-        "image": "/projects/mac_portfolio.webp",
+        "image": "/projects/test.webp",
         "imageAlt": "portfolio",
         "title": "Portfolio",
         "subtitle": "React, Three.js",
         "slug": "portfolio"
     },
     {
-        "image": "/projects/mac3_project.webp",
+        "image": "/projects/test.webp",
         "imageAlt": "sketchfab",
         "title": "Sketchfab Model View",
         "subtitle": "React, Three.js",
         "slug": "sketchfab"
     },
     {
-        "image": "/projects/mac2_travel.webp",
+        "image": "/projects/test.webp",
         "imageAlt": "clone",
         "title": "Travel Clone",
         "subtitle": "React, TypeScript",
