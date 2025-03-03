@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './LabItem.module.scss'
@@ -27,4 +26,4 @@ LabItem.propTypes = {
   link: PropTypes.string,
 }
 
-export default memo(LabItem);
+export default LabItem;
