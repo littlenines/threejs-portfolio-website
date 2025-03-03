@@ -1,5 +1,18 @@
 @use "../../styles/variables" as *;
 
+.main {
+  padding-top: 20px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  margin-left: 20px;
+  width: fit-content;
+}
+
 .project,
 .project_title,
 .project_description,

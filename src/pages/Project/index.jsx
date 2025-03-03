@@ -1,5 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 import pages from "../../assets/json/pages.json";
 import styles from "./Project.module.scss";
@@ -13,9 +15,20 @@ const Project = () => {
   }
 
   return (
-    <>
+    <main id="top" className={styles.main}>
       <ScrollToTopOnMount />
-      <motion.main
+      <motion.section
+        viewport={{ once: true }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+      >
+        <Link to='/' className={styles.back}>
+          <FontAwesomeIcon icon={faChevronCircleLeft} size="2x" /> Back to home
+        </Link>
+      </motion.section>
+
+      <motion.section
         viewport={{ once: true }}
         initial={{ opacity: 0, translateY: "130px" }}
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -40,10 +53,10 @@ const Project = () => {
         )}
 
         <section className={styles.project_back_link}>
-          <Link to="/">Back to home</Link>
+          <a href="#top">Back to top</a>
         </section>
-      </motion.main>
-    </>
+      </motion.section>
+    </main>
   );
 };
 
