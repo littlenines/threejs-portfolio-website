@@ -1,6 +1,6 @@
 @use "../../styles/variables" as *;
 
-$transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
+// $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
 
 .lab_image {
   height: 270px;
@@ -12,8 +12,9 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
     display: block;
     width: 100%;
     height: 100%;
-    max-width: 100%;
+    // max-width: 100%;
     object-fit: cover;
+    backface-visibility: hidden;
   }
 }
 
@@ -31,29 +32,29 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
   }
 }
 
-@media (min-width: $media-tablet) {
-  .lab_image {
-    height: 500px;
-    will-change: transform;
-    transition: $transition-value;
+// @media (min-width: $media-tablet) {
+//   .lab_image {
+//     height: 500px;
+//     will-change: transform;
+//     transition: $transition-value;
 
-    img {
-      transition: $transition-value;
+//     img {
+//       transition: $transition-value;
 
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
+//       &:hover {
+//         transform: scale(1.1);
+//       }
+//     }
 
-    &:hover {
-      transform: scale(0.95);
-      cursor: pointer;
-    }
-  }
-}
+//     &:hover {
+//       transform: scale(0.95);
+//       cursor: pointer;
+//     }
+//   }
+// }
 
-@media (min-width: $media-desktop-standard) {
-  .lab_image {
-    height: 600px;
-  }
-}
+// @media (min-width: $media-desktop-standard) {
+//   .lab_image {
+//     height: 600px;
+//   }
+// }
