@@ -3,7 +3,6 @@
 $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
 
 .lab_image {
-  height: 270px;
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -12,7 +11,6 @@ $transition-value: transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
     display: block;
     width: 100%;
     height: 100%;
-    max-width: 100%;
     object-fit: cover;
   }
 }
