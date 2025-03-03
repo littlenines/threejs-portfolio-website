@@ -7,7 +7,7 @@ const LabItem = ({image, imageAlt, title, subtitle, link, ...props}) => {
     <div {...props}>
       <div className={styles.lab_image}>
         <Link to={link}>
-          <img src={image} alt={imageAlt} fetchPriority='high' loading='eager' />
+          <img src={image} alt={imageAlt} loading='lazy' />
         </Link>
       </div>
       <div className={styles.lab_info}>
