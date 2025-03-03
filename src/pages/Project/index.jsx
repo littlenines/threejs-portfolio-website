@@ -1,7 +1,6 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import BackToHome from "../../components/BackToHome";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 import pages from "../../assets/json/pages.json";
 import styles from "./Project.module.scss";
@@ -23,9 +22,7 @@ const Project = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
       >
-        <Link to='/' className={styles.back}>
-          <FontAwesomeIcon icon={faChevronCircleLeft} size="2x" /> Back to home
-        </Link>
+        <BackToHome to='/' className={styles.back} />
       </motion.section>
 
       <motion.section
