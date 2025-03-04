@@ -9,7 +9,7 @@ import Section from "./components/Section";
 const LabItem = lazy(() => import("./components/LabItem"));
 const CubePortal = lazy(() => import("./components/CubePortal"));
 const MemoCard = lazy(() => import("./components/MemoCard"));
-// const ContactMe = lazy(() => import("./components/ContactMe"));
+const ContactMe = lazy(() => import("./components/ContactMe"));
 import projects from "./assets/json/projects.json";
 import skills from './assets/json/skills.json';
 
@@ -83,9 +83,9 @@ function App() {
       </Section>
 
       {/* Contact */}
-      {/* <Section title='Want to work with me?' id='contact'>
+      <Section title='Want to work with me?' id='contact'>
         <ContactMe title='Send me a message' mail='galbinovic584@gmail.com' />
-      </Section> */}
+      </Section>
     </>
   );
 }
