@@ -40,5 +40,83 @@
         "image": "/skills/nextjs.svg",
         "text": "Next.js",
         "alt": "nextjs"
+    },
+    {
+        "id": 7,
+        "image": "/skills/mui.svg",
+        "text": "Mui",
+        "alt": "mui"
+    },
+    {
+        "id": 8,
+        "image": "/skills/vuejs.svg",
+        "text": "Vue",
+        "alt": "vue"
+    },
+    {
+        "id": 9,
+        "image": "/skills/nuxt.svg",
+        "text": "Nuxt",
+        "alt": "nuxt"
+    },
+    {
+        "id": 10,
+        "image": "/skills/vuetify.svg",
+        "text": "Vuetify",
+        "alt": "vuetify"
+    },
+    {
+        "id": 11,
+        "image": "/skills/threejs.svg",
+        "text": "Three.js",
+        "alt": "threejs"
+    },
+    {
+        "id": 12,
+        "image": "/skills/webpack.svg",
+        "text": "Webpack",
+        "alt": "webpack"
+    },
+    {
+        "id": 13,
+        "image": "/skills/gulp.svg",
+        "text": "Gulp",
+        "alt": "gulp"
+    },
+    {
+        "id": 14,
+        "image": "/skills/axios.svg",
+        "text": "Axios",
+        "alt": "axios"
+    },
+    {
+        "id": 15,
+        "image": "/skills/git.svg",
+        "text": "Git",
+        "alt": "git"
+    },
+    {
+        "id": 16,
+        "image": "/skills/github.svg",
+        "text": "GitHub",
+        "alt": "github"
+    },
+    {
+        "id": 17,
+        "image": "/skills/gitlab.svg",
+        "text": "GitLab",
+        "alt": "gitlab"
+    },
+    {
+        "id": 18,
+        "image": "/skills/postman.svg",
+        "text": "Postman",
+        "alt": "postman"
+    },
+    {
+        "id": 19,
+        "image": "/skills/motion.svg",
+        "text": "Motion",
+        "alt": "motion"
     }
 ]
