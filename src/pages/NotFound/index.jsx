@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Link } from 'react-router-dom';
-const GooeyButton = lazy(() => import("../../components/GooeyButton"));
+const GooeyButton = lazy(() => import("@/components/GooeyButton"));
 import styles from './NotFound.module.scss';
 
 const NotFound = () => {

@@ -1,4 +1,4 @@
-import { lazy, memo } from "react";
+import { lazy } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -44,4 +44,4 @@ HeroButtons.propTypes = {
   cv: PropTypes.string
 }
 
-export default memo(HeroButtons);
+export default HeroButtons;

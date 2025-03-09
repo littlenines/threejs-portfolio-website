@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { useProgress } from '@react-three/drei';
 import PropTypes from 'prop-types';
 import styles from './Loader.module.scss'
@@ -17,4 +16,4 @@ Loader.propTypes = {
   showProgress: PropTypes.bool
 }
 
-export default memo(Loader)
+export default Loader;

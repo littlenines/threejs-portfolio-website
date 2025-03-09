@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import PropTypes from 'prop-types';
 import { motion } from 'motion/react';
 import CompanionPortal from '../CompanionPortal'
@@ -29,4 +28,4 @@ ContactMe.propTypes = {
     mail: PropTypes.string,
 }
 
-export default memo(ContactMe)
+export default ContactMe;

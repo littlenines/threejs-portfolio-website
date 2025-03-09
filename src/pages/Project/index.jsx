@@ -1,8 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
-import BackToHome from "../../components/BackToHome";
-import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
-import pages from "../../assets/json/pages.json";
+import BackToHome from "@/components/BackToHome";
+import ScrollToTopOnMount from "@/components/ScrollToTopOnMount";
+import pages from "@/assets/json/pages.json";
 import styles from "./Project.module.scss";
 
 const Project = () => {

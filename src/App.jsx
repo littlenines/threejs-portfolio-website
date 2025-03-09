@@ -1,25 +1,25 @@
 import { lazy, Suspense } from "react";
 import { motion } from "motion/react";
-import Loader from "./components/Loader";
-const HeroInfo = lazy(() => import("./components/HeroInfo"));
-const HeroButtons = lazy(() => import("./components/HeroButtons"));
-const LiquidCircle = lazy(() => import("./components/LiquidCircle"));
-import Header from "./components/Layout/Header";
-import Section from "./components/Section";
-const LabItem = lazy(() => import("./components/LabItem"));
-const CubePortal = lazy(() => import("./components/CubePortal"));
-const MemoCard = lazy(() => import("./components/MemoCard"));
-const ContactMe = lazy(() => import("./components/ContactMe"));
-import projects from "./assets/json/projects.json";
-import skills from './assets/json/skills.json';
+import Loader from "@/components/Loader";
+const HeroInfo = lazy(() => import("@/components/HeroInfo"));
+const HeroButtons = lazy(() => import("@/components/HeroButtons"));
+const LiquidCircle = lazy(() => import("@/components/LiquidCircle"));
+import Header from "@/components/Layout/Header";
+const Section = lazy(() => import("@/components/Section"));
+const LabItem = lazy(() => import("@/components/LabItem"));
+const CubePortal = lazy(() => import("@/components/CubePortal"));
+const MemoCard = lazy(() => import("@/components/MemoCard"));
+const ContactMe = lazy(() => import("@/components/ContactMe"));
+import projects from "@/assets/json/projects.json";
+import skills from '@/assets/json/skills.json';
 
-import styles from './App.module.scss';
+import styles from '@/App.module.scss';
 
 function App() {
   return (
     <>
       <Suspense fallback={<Loader aria-live="polite" />}>
-      <Header />
+        <Header />
         <Section className="container--hero" id='about'>
           <motion.div className={styles.hero}
                       initial={{ opacity: 0 }}

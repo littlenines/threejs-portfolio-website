@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from '@react-three/drei';
 import PortalHeadModel from "./PortalHeadModel";
 import { useInView } from "motion/react";
-import { useMouseGrab } from "../../hooks/useMouseGrab";
+import { useMouseGrab } from "@/hooks/useMouseGrab";
 
 const PortalHead = () => {
   const canvasRef = useRef();

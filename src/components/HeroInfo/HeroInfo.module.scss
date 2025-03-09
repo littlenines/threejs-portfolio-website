@@ -23,13 +23,7 @@
 
 .developer {
   font-size: $font-sm;
-  margin-bottom: 8px;
-  background: $gradient-text;
-  color: transparent;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  width: 100%;
+  margin-bottom: $margin-xs;
   @include responsive-font($font-base, $font-2md, $font-lg);
 }
 
@@ -50,8 +44,6 @@
 
   .developer {
     text-align: unset;
-    width: unset;
-    margin-bottom: $margin-sm;
   }
 
   .subtext {

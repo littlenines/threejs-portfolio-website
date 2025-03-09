@@ -6,10 +6,8 @@ import styles from './HeroInfo.module.scss'
 const HeroInfo = ({title, description, typewrite}) => {
   return (
     <>
-      <h1 className={styles.title}>
-        {title}
-      </h1>
-      {/* <p className={styles.developer}><TypewriterEffect typewrite={typewrite} /></p> */}
+      <h1 className={styles.title}>{title}</h1>
+      <TypewriterEffect typewrite={typewrite} className={styles.developer} />
       <p className={styles.subtext}>{description}</p>
     </>
   );

@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+
+.typewriter {
+    width: fit-content;
+}
+
+.typewriter span {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid $color-light-dim;
+    white-space: nowrap;
+    width: 0;
+    background: $gradient-text;
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: typing 7s steps(20, end) 1s infinite alternate;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    45% { width: 100%; }
+    55% { width: 100%; } 
+    95% { width: 0; } 
+    100% { width: 0; } 
+}

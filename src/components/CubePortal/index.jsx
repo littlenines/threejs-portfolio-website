@@ -2,7 +2,7 @@ import { memo, Suspense, lazy } from "react";
 import { Canvas } from "@react-three/fiber";
 import {Preload, BakeShadows } from '@react-three/drei';
 const CubePortalModel = lazy(() => import('./CubePortalModel'))
-import useIsMobile from "../../hooks/useIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const CubePortal = () => {
   const isMobile = useIsMobile();

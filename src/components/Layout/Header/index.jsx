@@ -1,11 +1,12 @@
-import { memo, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import CircleText from './CircleText';
 import Burger from './Burger';
-import useScrollIntoView from '../../../hooks/useScrollIntoView';
-import useDraggable from '../../../hooks/useDraggable';
-import { navigationItems } from '../../../mocks/mock';
-import useViewport from '../../../hooks/useViewport';
-import shouldScroll from '../../../utils/shouldScroll';
+import useScrollIntoView from '@/hooks/useScrollIntoView';
+import useDraggable from '@/hooks/useDraggable';
+import { navigationItems } from '@/mocks/mock';
+import useViewport from '@/hooks/useViewport';
+import shouldScroll from '@/utils/shouldScroll';
 import styles from './Header.module.scss';
 
 function Header() {
@@ -58,23 +59,7 @@ function Header() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeIn" }}
       >
-        <svg className={styles.text_circle}
-             xmlns="http://www.w3.org/2000/svg"
-             xmlLang="en"
-             xmlnsXlink="http://www.w3.org/1999/xlink"
-             viewBox="0 0 500 500"
-        >
-          <defs>
-            <path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)"/>
-          </defs>
-          <g className="textcircle">
-            <text textLength="940">
-              <textPath xlinkHref="#textcircle" aria-label="Drag me" textLength="940">
-                Drag me | Drag me | Drag me |&#160;
-              </textPath>
-            </text>
-          </g>
-        </svg>
+        <CircleText className={styles.text_circle} text='Drag me'/>
         <Burger active={active}
                 setActive={setActive}
                 isDragging={isDragging}
@@ -101,4 +86,4 @@ function Header() {
   );
 }
 
-export default memo(Header);
+export default Header;

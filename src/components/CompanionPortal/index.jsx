@@ -2,9 +2,9 @@ import { memo, useRef, lazy, Suspense, useMemo } from "react";
 import { Canvas, useFrame} from "@react-three/fiber";
 import { Preload, useGLTF, BakeShadows } from '@react-three/drei';
 import { useInView } from "motion/react";
-const CompanionPortalModel = lazy(() => import("../../models/companionPortal"));
-import PortalCompanionCubeGLTF from '../../assets/3D/cube_companion.glb'
-import useIsMobile from "../../hooks/useIsMobile";
+const CompanionPortalModel = lazy(() => import("@/models/companionPortal"));
+import PortalCompanionCubeGLTF from '@/assets/3D/cube_companion.glb'
+import useIsMobile from "@/hooks/useIsMobile";
 import style from './Companion.module.scss'
 
 const companionProps = {

@@ -1,8 +1,8 @@
 import { memo, useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Instances, Instance, Float, useGLTF } from '@react-three/drei';
-import PortalCubeGLTF from '../../../assets/3D/portal_cube.glb'
-import { useCubeConfigs } from "../../../hooks/useCubeConfigs";
+import PortalCubeGLTF from '@/assets/3D/portal_cube.glb'
+import { useCubeConfigs } from "@/hooks/useCubeConfigs";
 
 const ModelCube = () => {
     const { nodes, materials } = useGLTF(PortalCubeGLTF, true);

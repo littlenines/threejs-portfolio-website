@@ -5,8 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from './App.jsx'
-const Project = lazy(() => import('./pages/Project/index.jsx'));
-const NotFound = lazy(() => import('./pages/NotFound/index.jsx'));
+const Project = lazy(() => import('@/pages/Project/index.jsx'));
+const NotFound = lazy(() => import('@/pages/NotFound/index.jsx'));
 import './reset.scss'
 import './global.scss'
 
