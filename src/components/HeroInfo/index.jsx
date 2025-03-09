@@ -9,7 +9,7 @@ const HeroInfo = ({title, description, typewrite}) => {
       <h1 className={styles.title}>
         {title}
       </h1>
-      <p className={styles.developer}><TypewriterEffect typewrite={typewrite} /></p>
+      {/* <p className={styles.developer}><TypewriterEffect typewrite={typewrite} /></p> */}
       <p className={styles.subtext}>{description}</p>
     </>
   );
