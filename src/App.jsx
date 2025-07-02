@@ -1,6 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { motion } from "motion/react";
-import Loader from "@/components/Loader";
 const HeroInfo = lazy(() => import("@/components/HeroInfo"));
 const HeroButtons = lazy(() => import("@/components/HeroButtons"));
 const LiquidCircle = lazy(() => import("@/components/LiquidCircle"));
@@ -18,28 +17,26 @@ import styles from '@/App.module.scss';
 function App() {
   return (
     <>
-      <Suspense fallback={<Loader aria-live="polite" />}>
-        <Header />
-        <Section className="container--hero" id='about'>
-          <motion.div className={styles.hero}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.2, ease: "easeIn" }}>
-            <div className="hero_info">
-              <HeroInfo title='Hey! My name is Nemanja.'
-                        typewrite='FRONTEND DEVELOPER'
-                        description='I&apos;m from Serbia, currently based in Niš. With over 3 years of experience, focused on writing clean, efficient code to bring web projects to life. I’m passionate about developing interactive and responsive user interfaces and always up for tackling new challenges in frontend development.' />
-              <div className={styles.hero_info_buttons}>
-                <HeroButtons github='https://github.com/littlenines' 
-                             linkedin='https://www.linkedin.com/in/galbinovic584/'
-                             cv='/cv/nemanja-galbinovic-cv.pdf' />
-              </div>
+      <Header />
+      <Section className="container--hero" id='about'>
+        <motion.div className={styles.hero}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeIn" }}>
+          <div className="hero_info">
+            <HeroInfo title='Hey! My name is Nemanja.'
+                      typewrite='FRONTEND DEVELOPER'
+                      description='I&apos;m from Serbia, currently based in Niš. With over 3 years of experience, focused on writing clean, efficient code to bring web projects to life. I’m passionate about developing interactive and responsive user interfaces and always up for tackling new challenges in frontend development.' />
+            <div className={styles.hero_info_buttons}>
+              <HeroButtons github='https://github.com/littlenines' 
+                           linkedin='https://www.linkedin.com/in/galbinovic584/'
+                           cv='/cv/nemanja-galbinovic-cv.pdf' />
             </div>
-            <LiquidCircle />
-          </motion.div>
-        </Section>
-      </Suspense>
+          </div>
+          <LiquidCircle />
+        </motion.div>
+      </Section>
 
       {/* Cubes */}
       <CubePortal />

@@ -7,6 +7,7 @@ import {
 import App from './App.jsx'
 const Project = lazy(() => import('@/pages/Project/index.jsx'));
 const NotFound = lazy(() => import('@/pages/NotFound/index.jsx'));
+import LoaderWrapper from "@/components/LoaderWrapper/index.jsx";
 import './reset.scss'
 import './global.scss'
 
@@ -31,6 +32,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} future={{ v7_startTransition: true, v7_relativeSplatPath: true, }} />
+    <LoaderWrapper>
+      <RouterProvider router={router} future={{ v7_startTransition: true, v7_relativeSplatPath: true, }} />
+    </LoaderWrapper>
   </StrictMode>,
 )
