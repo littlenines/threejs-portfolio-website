@@ -1,4 +1,4 @@
-import { memo, useRef, useMemo } from "react";
+import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Instances, Instance, Float, useGLTF } from '@react-three/drei';
 import PortalCubeGLTF from '@/assets/3D/portal_cube.glb'
@@ -54,4 +54,4 @@ const ModelCube = () => {
     );
 };
 
-export default memo(ModelCube);
+export default ModelCube;
