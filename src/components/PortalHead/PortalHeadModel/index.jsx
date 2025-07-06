@@ -1,9 +1,8 @@
 
 import { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, BakeShadows, Preload } from '@react-three/drei';
+import WheatleyGLTF from '@/assets/3D/portal.glb'
 import WheatleyPortalModel from "@/models/wheatleyPortal"
-
-const WheatleyGLTF = '/3D/portal.glb'
 
 const headProps = {
   scale: [31, 31, 31],

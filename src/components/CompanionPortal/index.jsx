@@ -2,12 +2,11 @@ import { useRef, lazy, Suspense, useMemo } from "react";
 import { Canvas, useFrame} from "@react-three/fiber";
 import { Preload, useGLTF, BakeShadows } from '@react-three/drei';
 import { useInView } from "motion/react";
+import PortalCompanionCubeGLTF from "@/assets/3D/cube_companion.glb"
 const CompanionPortalModel = lazy(() => import("@/models/companionPortal"));
 import useIsMobile from "@/hooks/useIsMobile";
 import useModelCleanup from "@/hooks/useModelCleanup";
 import style from './Companion.module.scss'
-
-const PortalCompanionCubeGLTF = '/3D/cube_companion.glb'
 
 const companionProps = {
     scale: [0.47, 0.47, 0.47],
