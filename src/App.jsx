@@ -1,20 +1,27 @@
 import { lazy } from "react";
 import { motion } from "motion/react";
-const HeroInfo = lazy(() => import("@/components/HeroInfo"));
-const HeroButtons = lazy(() => import("@/components/HeroButtons"));
-const LiquidCircle = lazy(() => import("@/components/LiquidCircle"));
 import Header from "@/components/Layout/Header";
+import HeroInfo from "./components/HeroInfo";
+import HeroButtons from "./components/HeroButtons";
+import LiquidCircle from "./components/LiquidCircle";
 const Section = lazy(() => import("@/components/Section"));
 const LabItem = lazy(() => import("@/components/LabItem"));
 const CubePortal = lazy(() => import("@/components/CubePortal"));
 const MemoCard = lazy(() => import("@/components/MemoCard"));
 const ContactMe = lazy(() => import("@/components/ContactMe"));
+import useGltfCleanup from "./hooks/useGltfCleanup";
 import projects from "@/assets/json/projects.json";
 import skills from '@/assets/json/skills.json';
 
 import styles from '@/App.module.scss';
 
 function App() {
+  useGltfCleanup([
+    "/3D/portal_cube.glb",
+    "/3D/cube_companion.glb",
+    "/3D/portal.glb",
+  ]);
+  
   return (
     <>
       <Header />
@@ -23,7 +30,7 @@ function App() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeIn" }}>
+                    transition={{ duration: 1, delay: 0.4, ease: "easeIn" }}>
           <div className="hero_info">
             <HeroInfo title='Hey! My name is Nemanja.'
                       typewrite='FRONTEND DEVELOPER'

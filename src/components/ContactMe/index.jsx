@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { motion } from 'motion/react';
-import CompanionPortal from '../CompanionPortal'
+import CompanionPortalCube from '../CompanionPortal';
 import styles from './ContactMe.module.scss'
 
 const ContactMe = ({ title, mail, ...props }) => {
@@ -17,7 +17,7 @@ const ContactMe = ({ title, mail, ...props }) => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.5, ease: "linear" }}>
-                <CompanionPortal />
+                <CompanionPortalCube />
             </motion.div>
         </div>
     )
