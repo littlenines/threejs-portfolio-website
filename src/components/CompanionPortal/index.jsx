@@ -44,7 +44,7 @@ const CubePortal = () => {
     const isInView = useInView(canvasRef);
     const isMobile = useIsMobile();
     
-   const { setRenderer } = useModelCleanup();
+   const rendererRef = useModelCleanup();
 
     if (isMobile) return null;
 
@@ -53,7 +53,7 @@ const CubePortal = () => {
                 dpr={[0.7, 0.9]}
                 gl={{ powerPreference: "low-power" }}
                 id={style.canvas} 
-                onCreated={({ gl }) => setRenderer(gl)} >
+                onCreated={({ gl }) => rendererRef.current = gl} >
             <ambientLight intensity={0.8} />
             <directionalLight position={[2, 5, 0]} color={0xB275FB} intensity={0.5} />
             <pointLight position={[-0.5, 0, 4.1]}

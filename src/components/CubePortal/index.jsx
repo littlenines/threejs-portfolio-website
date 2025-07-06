@@ -8,7 +8,7 @@ import useModelCleanup from "@/hooks/useModelCleanup";
 const CubePortal = () => {
   const isMobile = useIsMobile();
   
-  const { setRenderer } = useModelCleanup();
+  const rendererRef = useModelCleanup();
 
   if (isMobile) return null;
 
@@ -19,7 +19,7 @@ const CubePortal = () => {
             camera={{ near: 0.1, far: 10 }} 
             style={{ position: 'absolute' }} 
             className="canvas_cube"
-            onCreated={({ gl }) => setRenderer(gl)}>
+            onCreated={({ gl }) => rendererRef.current = gl}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 12, 0]} color={0xB275FB} intensity={0.7} />
       <directionalLight position={[7, 12, 0]} color={0x4AC0FF} intensity={0.6} />

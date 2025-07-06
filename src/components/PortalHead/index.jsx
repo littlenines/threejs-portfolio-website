@@ -11,8 +11,8 @@ const PortalHead = () => {
 
   const isInView = useInView(canvasRef, { initial: true });
   const mouseGrabEvent = useMouseGrab();
-  const { setRenderer } = useModelCleanup();
-
+  const rendererRef = useModelCleanup();
+  
   return (
     <Canvas onMouseDown={mouseGrabEvent}
             onMouseUp={mouseGrabEvent}
@@ -21,7 +21,7 @@ const PortalHead = () => {
             camera={{ near: 0.1, far: 10 }}
             gl={{ powerPreference: "low-power" }}
             className="head_canvas"
-            onCreated={({ gl }) => setRenderer(gl)}
+            onCreated={({ gl }) => rendererRef.current = gl}
     >
       <ambientLight intensity={0.2} />
       <directionalLight position={[5, 10, 5]} intensity={0.8} />

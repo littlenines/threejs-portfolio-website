@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const useModelCleanup = () => {
-  const [renderer, setRenderer] = useState();
+  const rendererRef = useRef(null);
 
   useEffect(() => {
     return () => {
+      const renderer = rendererRef.current;
       if (!renderer) return;
+
       renderer.dispose?.();
     };
-  }, [renderer]);
+  }, []);
 
-  return { setRenderer };
+  return rendererRef;
 };
 
 export default useModelCleanup;
