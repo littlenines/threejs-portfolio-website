@@ -1,3 +1,2 @@
-In progress... <br>
-Will continue when i have the time (FML), Three.js is really interesting and i'm tired of those plain websites...🙄 <br>
-I noticed that Brave browser is laggy, it does have some settings that need to be enabled so unfortunately can't really do something about that :(
+This project is no longer used, the biggest problem I had was that some browsers are not Threejs friendly, mostly performance or I had to manually enable "Hardware Acceleration" ( and some users might not know about this ) <br>
+The new portfolio is at [This link](https://github.com/littlenines/portfolio), with better optimization and it was done the way I wanted it to look :)
